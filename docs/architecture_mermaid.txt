@@ -1,0 +1,234 @@
+================================================================================
+AI Trend Listening 4.0 - 純文字 Mermaid 繪圖程式碼 (可直接複製)
+================================================================================
+
+--------------------------------------------------------------------------------
+圖一：高階總體系統架構圖 (High-Level Architecture)
+--------------------------------------------------------------------------------
+flowchart TB
+    subgraph USER_LAYER["👤 使用者與維運層 (Management Layer)"]
+        ADMIN["企業主管 / 電子報維運團隊"]
+        CONFIG["data/weekly_newsletter_theme.xlsx\n(每周主題與重點領域設定)"]
+        ADMIN -->|發布與設定啟用中主題| CONFIG
+    end
+
+    subgraph DATA_SOURCES["📡 外部數據來源層 (Data Sources)"]
+        GNEWS["Google News RSS (TW & US)\n(8大通用語法 + 動態主題語法)"]
+        RSS_FEEDS["11+ 權威科技與商業 RSS 媒體庫\n(TechCrunch, Wired, iThome, NVIDIA 等)"]
+    end
+
+    subgraph STAGE1["📡 Stage 1: 增量新聞監聽與品質過濾器 (stage1_news_fetcher.py)"]
+        CRAWLER["多源 RSS 抓取模組"]
+        FILTER["3 大品質過濾演算法\n(Negative / Use Case / Tech / Impact)"]
+        DEDUP["HashSet 增量去重與限制日過濾\n(seen_links + seen_titles, START_DATE=2026-07-27)"]
+        TAXONOMY["8 大趨勢領域自動打標\n(TREND_TAXONOMY)"]
+        
+        GNEWS --> CRAWLER
+        RSS_FEEDS --> CRAWLER
+        CRAWLER --> FILTER
+        FILTER --> DEDUP
+        DEDUP --> TAXONOMY
+    end
+
+    subgraph DATABASE["💾 數據持久化層 (Persistence Layer)"]
+        JSON_DB[("stage1_ai_news.json\n(全量增量數據庫)")]
+        EXCEL_DB[("stage1_ai_news.xlsx\n(多格式寫入與 Lock 備援)")]
+        TAXONOMY --> JSON_DB
+        TAXONOMY --> EXCEL_DB
+    end
+
+    subgraph STAGE2["🎯 Stage 2: 主題策展與 4-Tier 評分引擎 (stage2_curator.py)"]
+        THEME_MGR["動態主題對接與語意擴充\n(DOMAIN_EXPANSION)"]
+        RELEVANCE_GATE["100% 主題對接熔斷機制\n(Score = 0 直接過濾無關文章)"]
+        SCORING_ENGINE["4-Tier 權重計分演算法\n(Theme 40% + Biz 30% + Auth 20% + Appeal 10%)"]
+        RATIONALE_GEN["專家評比理由與職能標籤合成"]
+        
+        CONFIG --> THEME_MGR
+        JSON_DB --> RELEVANCE_GATE
+        THEME_MGR --> RELEVANCE_GATE
+        RELEVANCE_GATE -->|通過門檻| SCORING_ENGINE
+        SCORING_ENGINE --> RATIONALE_GEN
+    end
+
+    subgraph STAGE2_OUTPUTS["📑 Stage 2 產出層"]
+        S2_EXCEL[("stage2_curated_news.xlsx\n(Sheet 1 權重說明 + Sheet 2 精選清單)")]
+        S2_MD[("stage2_curated_report.md\n(Markdown 策展報告)")]
+        RATIONALE_GEN --> S2_EXCEL
+        RATIONALE_GEN --> S2_MD
+    end
+
+    subgraph STAGE3["🎨 Stage 3: Acelia 雜誌/SaaS 電子報建置器 (stage3_newsletter_builder.py)"]
+        TOP_SELECT["Top 6 案例精選與零湊數保護"]
+        HTTP_DECODER["googlenewsdecoder URL 還原\n+ HTTP 原始網頁 HTML 段落抓取"]
+        DIGEST_CLASSIFIER["100% 零幻覺「四大結構標題」歸類演算法\n(📌背景 / ⚙️技術 / 📊數據 / 🚀展望)"]
+        TAKEAWAYS["當期動態 Hero Takeaways 提煉"]
+        DOM_SYNC["Acelia SaaS UI 與前端數據嵌入\n(Justified Text + EMBEDDED_CASES)"]
+        
+        S2_EXCEL --> TOP_SELECT
+        TOP_SELECT --> HTTP_DECODER
+        HTTP_DECODER --> DIGEST_CLASSIFIER
+        DIGEST_CLASSIFIER --> TAKEAWAYS
+        TAKEAWAYS --> DOM_SYNC
+    end
+
+    subgraph WEB_OUTPUTS["🌐 前端發行層 (Web Publishing)"]
+        HTML_PAGE["newsletter.html\n(Acelia 雜誌質感電子報網頁)"]
+        JS_DATA["newsletter.js\n(前端動態渲染與 Modal 邏輯)"]
+        CSS_STYLE["newsletter.css\n(雙邊對齊與 HSL 顏色系統)"]
+        DOM_SYNC --> HTML_PAGE
+        DOM_SYNC --> JS_DATA
+    end
+
+    subgraph STAGE4["📦 Stage 4: 期數歸檔與離線單檔生成引擎 (stage3_archive_engine.py)"]
+        SNAPSHOT["期數資料夾全資產快照\n(archives/Issue_XX_Date_Theme/)"]
+        INLINER["HTML/CSS/JS 單檔內嵌引擎\n(standalone_newsletter.html)"]
+        HTML_PAGE --> SNAPSHOT
+        JS_DATA --> SNAPSHOT
+        CSS_STYLE --> SNAPSHOT
+        S2_EXCEL --> SNAPSHOT
+        SNAPSHOT --> INLINER
+    end
+
+    subgraph SCHEDULER["⏰ 全自動雙排程常駐服務 (master_scheduler_service.py)"]
+        TASK1["任務 1: 每日 17:00 觸發 Stage 1"]
+        TASK2["任務 2: 每週五 09:00 AM 觸發 Master Pipeline (Stage 2 ➔ 3 ➔ 4)"]
+        TASK1 -->|每日 17:00| STAGE1
+        TASK2 -->|每週五 09:00| STAGE2
+    end
+
+    subgraph READERS["👥 讀者與訂閱層 (Subscribers)"]
+        WEB_READER["Web 瀏覽器讀者\n(線上閱讀 + Modal 筆記彈窗)"]
+        OFFLINE_READER["離線單檔閱讀 / Email 附件\n(standalone_newsletter.html)"]
+        HTML_PAGE --> WEB_READER
+        INLINER --> OFFLINE_READER
+    end
+
+
+--------------------------------------------------------------------------------
+圖二：Stage 1 增量新聞抓取與品質過濾流程圖
+--------------------------------------------------------------------------------
+flowchart TD
+    Start([開始 Stage 1 增量新聞抓取]) --> ReadTheme[讀取 Excel 當前【啟用中】主題與重點領域]
+    ReadTheme --> GenQueries[產生搜尋語法:\n1. 8大通用 Query\n2. 動態主題屬性 Query\n3. 11+ 固定 RSS 網址]
+    GenQueries --> LoadOldDB[載入既存 stage1_ai_news.json\n建立 seen_links 與 seen_titles HashSet]
+    LoadOldDB --> FetchRSS[爬取 Google News TW/US 與 權威 RSS]
+    
+    FetchRSS --> LoopArticle{逐篇檢驗文章}
+    LoopArticle -->|已被 HashSet 紀錄 OR 早於 START_DATE| Skip[過濾拋棄]
+    LoopArticle -->|新文章| CheckNeg{是否包含 EXCLUDE_TERMS?\n融資炒作/活動報名廣告}
+    
+    CheckNeg -->|是| Skip
+    CheckNeg -->|否| CheckUseCase{是否包含 USE_CASE_TERMS?\n具體應用情境}
+    
+    CheckUseCase -->|否| Skip
+    CheckUseCase -->|是| CheckTech{是否包含 TECH_TERMS?\n技術與軟硬體細節}
+    
+    CheckTech -->|否| Skip
+    CheckTech -->|是| CheckImpact{是否包含 IMPACT_TERMS?\n量化效益與處置方案}
+    
+    CheckImpact -->|否| Skip
+    CheckImpact -->|是| PassQuality[通過 3 大品質過濾器]
+    
+    PassQuality --> Taxonomy[標註 8 大趨勢標籤 TREND_TAXONOMY]
+    Taxonomy --> AddToDB[加入全量新聞列表 & HashSet]
+    
+    Skip --> NextArticle{還有下一篇文章?}
+    AddToDB --> NextArticle
+    NextArticle -->|是| LoopArticle
+    NextArticle -->|否| SaveData[同步寫入 JSON / CSV / Excel]
+    SaveData --> End1([Stage 1 增量抓取完成])
+
+
+--------------------------------------------------------------------------------
+圖三：Stage 2 4-Tier 評分與 100% 熔斷門檻流程圖
+--------------------------------------------------------------------------------
+flowchart TD
+    Start2([開始 Stage 2 主題策展]) --> LoadTheme[載入 Excel 當前【啟用中】主題與領域]
+    LoadTheme --> BuildMatcher[建構動態關鍵字庫與 DOMAIN_EXPANSION 同義詞庫]
+    BuildMatcher --> LoadAll[載入 Stage 1 全量增量新聞庫]
+    
+    LoadAll --> EvalLoop{逐篇進行評分驗證}
+    EvalLoop --> MatchDomains[計算與當期主題/領域之命中次數]
+    
+    MatchDomains --> GateCheck{命中次數 == 0 ?}
+    GateCheck -->|是: 完全非當期主題| ScoreZero[Score = 0 分\n100% Strict Relevance Gate 熔斷排除]
+    
+    GateCheck -->|否: 契合當期主題| CalcScore[計算 4-Tier 權重得分]
+    
+    subgraph FOUR_TIERS["4-Tier 權重計分機制 (最高 100 分)"]
+        T1["Tier 1: 主題契合度 (40% 權重, 上限 50分)\nmin(matched_domains*15 + matched_kws*4, 50)"]
+        T2["Tier 2: 實務價值與 ROI (30% 權重, 上限 25分)\nmin(count(biz_kws)*3, 25)"]
+        T3["Tier 3: 媒體權威與時效 (20% 權重, 上限 15分)\n權威媒體 15分 / 一般媒體 10分"]
+        T4["Tier 4: 可讀性與切入點 (10% 權重, 上限 10分)\n摘要長度 > 40字給 10分"]
+    end
+    
+    CalcScore --> FOUR_TIERS
+    FOUR_TIERS --> SumScore[加總得出 Total Score]
+    SumScore --> CheckCutoff{Total Score >= 35 分?}
+    CheckCutoff -->|否| Reject[排除未達門檻文章]
+    CheckCutoff -->|是| Accept[選入候選名單 & 合成專家評比理由 Rationale]
+    
+    ScoreZero --> NextEval{還有下一篇文章?}
+    Reject --> NextEval
+    Accept --> NextEval
+    
+    NextEval -->|是| EvalLoop
+    NextEval -->|否| RankTop[按分數高低排序，精選 Top 20 文章]
+    RankTop --> ExportStage2[匯出 stage2_curated_news.xlsx 與 report.md]
+    ExportStage2 --> End2([Stage 2 策展完成])
+
+
+--------------------------------------------------------------------------------
+圖四：Stage 3 HTTP 全文解碼與「四大結構標題」歸類圖
+--------------------------------------------------------------------------------
+flowchart LR
+    subgraph INPUT["輸入來源"]
+        S2_NEWS["Stage 2 精選 Top 6 文章"]
+    end
+
+    subgraph HTTP_ENGINE["🌐 HTTP 網頁全文解碼與抓取模組"]
+        GDECODER["googlenewsdecoder\n(new_decoderv1 解碼真實網址)"]
+        REQ["urllib.request\n(發起 HTTP 請求抓取原始 HTML)"]
+        P_EXTRACT["<p> 標籤提取與廣告/Cookie 雜訊過濾"]
+        S2_NEWS --> GDECODER --> REQ --> P_EXTRACT
+    end
+
+    subgraph CLASSIFIER["🧩 100% 零幻覺「四大結構標題」歸類演算法"]
+        SEC1["📌 一、 核心背景與報導概要\n(事件起因與總體摘要段落)"]
+        SEC2["⚙️ 二、 關鍵技術與產品細節\n(模型、晶片、軟硬體架構段落)"]
+        SEC3["📊 三、 營運數據與市場動態\n(財務數字、良率、營收、毛利段落)"]
+        SEC4["🚀 四、 戰略佈局與產業展望\n(長遠佈局、合作廠房、供應鏈段落)"]
+        P_EXTRACT --> SEC1 & SEC2 & SEC3 & SEC4
+    end
+
+    subgraph DOM_SYNC["🎨 DOM 更新與 Acelia 前端嵌入"]
+        TAKEAWAY_GEN[" Hero 三大 Takeaways 動態提煉"]
+        TEXT_ALIGN["Justified Text (text-align: justify;)"]
+        JS_EMBED["newsletter.js (EMBEDDED_CASES)"]
+        HTML_UPDATE["newsletter.html (DOM 節點自動替換)"]
+        
+        SEC1 & SEC2 & SEC3 & SEC4 --> TAKEAWAY_GEN
+        TAKEAWAY_GEN --> TEXT_ALIGN --> JS_EMBED --> HTML_UPDATE
+    end
+
+
+--------------------------------------------------------------------------------
+圖五：雙排程守護服務觸發流程圖
+--------------------------------------------------------------------------------
+flowchart TD
+    Daemon[master_scheduler_service.py\n每 15 秒循環監控系統時間] --> CheckTime{判斷觸發時間點}
+    
+    CheckTime -->|每日 17:00 & 當日未觸發| ExecTask1[執行 任務 1: stage1_news_fetcher.py]
+    ExecTask1 --> FetchDaily[爬取與累積最新 AI 新聞到 stage1_ai_news.json/xlsx]
+    FetchDaily --> SetStage1Done[標記 last_stage1_date = 今天]
+    
+    CheckTime -->|每週五 09:00 AM & 當日未觸發| ExecTask2[執行 任務 2: master_run_pipeline.py]
+    ExecTask2 --> PipeS2[Stage 2: Active Theme 4-Tier 策展評分]
+    PipeS2 --> PipeS3[Stage 3: Acelia 電子報建置 & HTTP 段落解碼]
+    PipeS3 --> PipeS4[Stage 4: Issue 快照歸檔 & 離線單檔打包]
+    PipeS4 --> SetPipelineDone[標記 last_pipeline_date = 今天]
+    
+    SetStage1Done --> WaitNext[等待下一次時間檢查 (15s)]
+    SetPipelineDone --> WaitNext
+    CheckTime -->|非觸發時間點| WaitNext
+    WaitNext --> Daemon

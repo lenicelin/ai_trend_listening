@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trend Listening 電子報 | AI 加速電動車革命：從電池管理到智慧駕駛</title>
+  <meta name="description" content="AI Trend Listening 電子報：AI 加速電動車革命：從電池管理到智慧駕駛 實務案例與落地戰略精選">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-main: #f4f7fb;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(255, 255, 255, 0.9);
+  
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --primary-blue-light: #eff6ff;
+  --dark-btn: #111827;
+  --dark-btn-hover: #1f2937;
+  
+  --text-title: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-subtle: #e2e8f0;
+  --border-card: #edf2f7;
+  
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  --shadow-card-hover: 0 20px 40px -15px rgba(37, 99, 235, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.1rem 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.3px;
+}
+
+.issue-badge {
+  background: var(--primary-blue-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.theme-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+  color: var(--text-title);
+}
+
+.hero-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hashtag {
+  background: #f1f5f9;
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.lead-in-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--primary-blue);
+  padding: 1.75rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+}
+
+.lead-in-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-title);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.lead-in-header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.lead-in-intro {
+  color: var(--text-body);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.lead-in-insight-box {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #cbd5e1;
+}
+
+.insight-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.insight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-list li {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.65;
+  margin-bottom: 0.65rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.insight-list li:last-child {
+  margin-bottom: 0;
+}
+
+.insight-list li::before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.lead-in-cases-preview {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.preview-cases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preview-cases-list li {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.preview-cases-list li:last-child {
+  margin-bottom: 0;
+}
+
+.preview-case-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.lead-in-action-tip {
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+.highlights-container {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.highlights-merged-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.highlight-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.highlight-item:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.hl-icon {
+  font-size: 1.3rem;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.2rem;
+}
+
+.highlight-item p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.45;
+  text-align: justify;
+}
+
+/* Section Title */
+.section-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-title);
+}
+
+/* Cases Grid (Acelia Editorial SaaS Layout) */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case-card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.case-card-content {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.case-domain-badge {
+  display: none !important;
+}
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.badge-manufacturing { background: linear-gradient(135deg, #059669, #10b981); }
+.badge-supplychain { background: linear-gradient(135deg, #0284c7, #06b6d4); }
+.badge-hr { background: linear-gradient(135deg, #db2777, #f43f5e); }
+.badge-marketing { background: linear-gradient(135deg, #ea580c, #f97316); }
+.badge-sales { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.badge-service { background: linear-gradient(135deg, #4f46e5, #6366f1); }
+.badge-retail { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+.badge-finance { background: linear-gradient(135deg, #059669, #34d399); }
+.badge-legal { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.badge-enterprise { background: linear-gradient(135deg, #475569, #64748b); }
+
+.case-date-source {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.case-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--text-title);
+  margin-bottom: 0.75rem;
+}
+
+.case-summary {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.case-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.read-detail-btn {
+  background: var(--dark-btn);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.read-detail-btn:hover {
+  background: var(--dark-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.25);
+}
+
+/* Modal Overlay & Detail View */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-modal);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 1.75rem 2rem 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-title);
+  line-height: 1.4;
+  padding-right: 2.5rem;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+}
+
+.modal-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.modal-tab-btn.active {
+  background: var(--dark-btn);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(17, 24, 39, 0.2);
+}
+
+.modal-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+.modal-panel {
+  display: none;
+}
+
+.modal-panel.active {
+  display: block;
+}
+
+.panel-section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 0.85rem;
+}
+
+.panel-intro-text {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  background: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-blue);
+  text-align: justify;
+}
+
+.panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panel-list li {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.panel-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.modal-footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 4rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-sub {
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .hero-main-title { font-size: 1.6rem; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .modal-container { margin: 1rem; max-height: 85vh; }
+  .modal-header, .modal-body, .modal-footer { padding: 1.25rem; }
+}
+
+/* Executive Dashboard Section */
+.executive-dashboard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.dashboard-header {
+  margin-bottom: 1.75rem;
+}
+
+.dashboard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-badge-pill {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fbbf24;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.dashboard-title-group h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.3px;
+}
+
+.dashboard-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Takeaways Grid - Horizontal Presentation */
+.takeaways-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.takeaway-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.35rem 1.6rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.takeaway-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+}
+
+.takeaway-card.card-risk::before { background: linear-gradient(180deg, #ef4444, #f97316); }
+.takeaway-card.card-roi::before { background: linear-gradient(180deg, #10b981, #059669); }
+.takeaway-card.card-gov::before { background: linear-gradient(180deg, #3b82f6, #6366f1); }
+
+.takeaway-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.takeaway-card .card-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.takeaway-card h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-title, #0f172a);
+  line-height: 1.4;
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 260px;
+}
+
+.takeaway-bullets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 0.85rem 1.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.takeaway-bullet-item {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-body, #334155);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.takeaway-bullet-item span:last-child {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .takeaway-bullets {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Dashboard Widgets */
+.dashboard-widgets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.widget-box {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.widget-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kw-tag {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: var(--text-body);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kw-tag:hover, .kw-tag.active {
+  background: var(--primary-blue-light);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  cursor: pointer;
+  line-height: 1.45;
+  user-select: none;
+}
+
+.check-item .chk-box {
+  accent-color: var(--primary-blue);
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.check-item input:checked + span {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+  .takeaways-grid { grid-template-columns: 1fr; }
+  .dashboard-widgets { grid-template-columns: 1fr; }
+}
+
+/* ==================================================
+   Reader Feedback Section & Compact Floating Modal
+   ================================================== */
+.reader-feedback-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.feedback-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feedback-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.feedback-icon {
+  width: 38px;
+  height: 38px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.feedback-title-group h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.feedback-title-group p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.feedback-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.feedback-btn:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.feedback-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.feedback-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.feedback-input {
+  flex: 1;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #f8fafc;
+}
+
+.feedback-input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.feedback-submit-btn {
+  background: var(--dark-btn);
+  color: #ffffff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.feedback-submit-btn:hover {
+  background: var(--dark-btn-hover);
+}
+
+/* Floating Trigger Pill */
+.floating-feedback-pill {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 99;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.35);
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.floating-feedback-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: #1e293b;
+  box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.5);
+}
+
+/* Compact Modal */
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.feedback-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.feedback-modal-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-modal);
+  position: relative;
+  transform: translateY(15px) scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feedback-modal-overlay.active .feedback-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.feedback-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.feedback-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+
+</style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <span class="brand-title">AI Trend Listening</span>
+      </a>
+      <div class="issue-badge">
+        Vol. 2026 Issue #1 │ 7月號創刊專題
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!-- Main Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <div class="theme-tag-pill">
+          <span class="sparkle-icon">✨</span>
+          AI趨勢周報
+        </div>
+        
+        <h1 class="hero-main-title">AI 加速電動車革命：從電池管理到智慧駕駛</h1>
+        
+        <div class="hero-hashtags">
+          <span class="hashtag">#EnterpriseAI</span>
+          <span class="hashtag">#AITrends</span>
+          <span class="hashtag">#DigitalTransformation</span>
+          <span class="hashtag">#DeltaElectronics</span>
+        </div>
+
+        <div class="lead-in-card">
+          <h3>📖 本期導讀 (Vol. 2026 Issue #8)</h3>
+          <div class="lead-in-header-badge">💡 專題深度解讀</div>
+          <p class="lead-in-intro">本期專題聚焦「AI 加速電動車革命：從電池管理到智慧駕駛」，從收錄新聞觀察，產業正加速推動軟硬體架構的技術落地與規格升級。</p>
+
+          <div class="lead-in-insight-box">
+            <h4 class="insight-subtitle">🚀 本期重點新聞產業訊號：</h4>
+            <ul class="insight-list">
+              <li style="margin-bottom: 0.85rem; line-height: 1.65; color: #334155;">
+                <strong style="color: #0f172a; font-size: 0.96rem;">車用連接器與智慧射出自動化升級</strong>：對製造業而言，如何兼顧精密定位、生產品質與自動化效率，已成為提升市場競爭力的重要關鍵。隨著AI伺服器、高速傳輸、電動車及智慧電子設備快速發展，值得企業決策者。 凸顯相關產業正加速【邊緣 AI 感測與自動化控制 / 車用算力與 BMS 智慧管理系統】應用的規格對接與硬體整合。
+              </li>
+              <li style="margin-bottom: 0.85rem; line-height: 1.65; color: #334155;">
+                <strong style="color: #0f172a; font-size: 0.96rem;">車廠轉型實體 AI 平台公司</strong>：特斯拉已經逐漸被重新定義為一家「實體人工智慧平台公司」，它的未來產品線涵蓋了在實體世界中運作的 AI 終端設備（如全自動駕駛汽車、Optimus 人形機器人）。 凸顯相關產業正加速【車用算力與 BMS 智慧管理系統】應用的規格對接與硬體整合。
+              </li>
+              <li style="margin-bottom: 0.85rem; line-height: 1.65; color: #334155;">
+                <strong style="color: #0f172a; font-size: 0.96rem;">智慧移動產學合作與人才培育</strong>：雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮 蕃新聞。建議企業追蹤此案例後續發展，以評估對同業影響，值得企業決策者。 凸顯相關產業正加速【車用算力與 BMS 智慧管理系統】應用的規格對接與硬體整合。
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Cases Section Header -->
+    <div class="section-header">
+      <h2>🎯 本期精選 3 大深度實務案例</h2>
+    </div>
+
+    <!-- Cases Grid -->
+    <section class="cases-grid" id="cases-grid">
+      <!-- Dynamically Populated by newsletter.js -->
+    </section>
+
+    <!-- Reader Feedback Section -->
+    <section class="reader-feedback-section">
+      <div class="feedback-card">
+        <div class="feedback-card-top">
+          <div class="feedback-header">
+            <div class="feedback-icon">💬</div>
+            <div class="feedback-title-group">
+              <h3>本期電子報讀者意見反饋</h3>
+              <p>您的實務意見是我們持續優化專題選題與內容品質的核心動力</p>
+            </div>
+          </div>
+          <div class="feedback-actions">
+            <button class="feedback-btn" data-rating="5">💡 獲益良多 (5★)</button>
+            <button class="feedback-btn" data-rating="4">👍 內容紮實 (4★)</button>
+            <button class="feedback-btn" data-rating="3">📝 仍需優化 (3★)</button>
+          </div>
+        </div>
+
+        <div class="feedback-input-group">
+          <input type="text" class="feedback-input" id="feedback-input-text" placeholder="寫下您對本期選題或內容的建議（選填）...">
+          <button class="feedback-submit-btn" id="feedback-submit-btn">送出反饋</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+                                                        <!-- Footer -->
+  <footer class="footer">
+    <p>AI Trend Listening 科技與產業趨勢周報 &copy; 2026 | 專為高層決策者與團隊打造的企業 AI 情報</p>
+    <p class="footer-sub">資訊來源包括權威產業媒體、研究機構與新聞數據庫；內容經由主管評選與綜合編撰，精選新聞歸屬原創作者所有。</p>
+  </footer>
+
+  <!-- Floating Feedback Trigger Pill -->
+  <div class="floating-feedback-pill" id="floating-feedback-btn">
+    <span class="fb-icon">💬</span>
+    <span>意見反饋</span>
+  </div>
+
+  <!-- Compact Feedback Modal Overlay -->
+  <div class="feedback-modal-overlay" id="feedback-modal">
+    <div class="feedback-modal-box">
+      <button class="feedback-modal-close" id="feedback-modal-close">✕</button>
+      <div class="feedback-header" style="margin-bottom: 1rem;">
+        <div class="feedback-icon">⚡</div>
+        <div class="feedback-title-group">
+          <h3>讀者快速意見反饋</h3>
+          <p>請給予本期內容簡單評分或建議</p>
+        </div>
+      </div>
+      
+      <div class="feedback-actions" style="margin-bottom: 1rem; justify-content: center;">
+        <button class="feedback-btn" data-rating="5">💡 非常有幫助</button>
+        <button class="feedback-btn" data-rating="4">👍 還不錯</button>
+        <button class="feedback-btn" data-rating="3">📝 提出建議</button>
+      </div>
+
+      <div class="feedback-input-group" style="flex-direction: column;">
+        <input type="text" class="feedback-input" id="modal-feedback-text" placeholder="可在此填寫具體建議..." style="width: 100%;">
+        <button class="feedback-submit-btn" id="modal-feedback-submit" style="width: 100%; margin-top: 0.5rem;">確認送出</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="newsletter.js"></script>
+<script>
+const EMBEDDED_CASES = [
+  {
+    "id": 1,
+    "domain": "AI 加速電動車",
+    "tech_stack": "邊緣 AI 感測與自動化控制 / 車用算力與 BMS 智慧管理系統",
+    "badge_class": "badge-manufacturing",
+    "title": "AI與電動車帶動連接器需求 華嶸打造嵌件射出智慧生產方案 | 熱門亮點 | 商情 - 經濟日報",
+    "pub_date": "2026-07-28 02:01",
+    "source": "經濟日報 (via Google News)",
+    "author": "經濟日報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBmYkxwcWhqWlM2N2dNWVpzMmlzV3llNzVjTlpmYUdhUl9PREx5MF92S191WWJaS1NSVFE2a2NqSk5ObmlyV3V2QWRlQmpaSVFpRmFGQUJkdWpEUQ?oc=5",
+    "cover_image": "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80",
+    "summary": "對製造業而言，如何兼顧精密定位、生產品質與自動化效率，已成為提升市場競爭力的重要關鍵。隨著AI伺服器、高速傳輸、電動車及智慧電子設備快速發展，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：AI與電動車帶動連接器需求 華嶸打造嵌件射出智慧生產方案 | 熱門亮點 | 商情 - 經濟日報\n📰 來源：經濟日報 (via Google News) | 📅 發布日期：2026-07-28 02:01\n🔗 原文網址：https://money.udn.com/money/story/5635/9653790\n🏷️ 領域分類：AI 加速電動車\n\n📌 一、事件背景與報導摘要\n  • 聯合報系著作權所有 © 2026 All Rights Reserved\n  • 華嶸將持續以完整的立式射出成型產品線與客製化技術服務，協助全球電子產業打造更高效率、更穩定且更具智慧化的連接器生產解決方案，攜手客戶迎向下一波智慧製造新商機。\n\n🔍 二、關鍵技術與架構細節\n  • 深耕射出成型設備領域多年的華嶸集團，近期協助多家國際電子製造商規劃電氣連接器嵌件射出成型產線，其中包括來自突尼西亞的大型電子製造商，透過導入YC-2S無拉桿式立式射出成型機，成功提升嵌件定位效率與操作便利性，並為後續智慧自動化布局奠定基礎。\n  • 華嶸指出，現今電氣連接器的製造早已不只是塑膠射出，而是在射出前便需完成金屬端子、插針、線纜端部等精密嵌件定位。若嵌件在合模或射出過程中發生細微位移，便可能造成短射、毛邊、端子外露或尺寸偏差，不僅影響產品品質，更可能導致整批產品報廢。因此，設備不只是提供穩定射出能力，更必須兼顧模具操作空間、人體工學與自動化整合能力。\n  • 除了YC系列外，華嶸亦針對不同生產需求提供完整立式射出成型解決方案。其中，YR旋轉工作盤系列適合固定工作站進行大量嵌件放置與連續生產，透過180度旋轉工作盤設計，可有效縮短循環時間，提升產線效率；而YL系列則同樣採用無拉桿結構，適用於更長尺寸線材或特殊嵌件產品，滿足不同電子連接器的多元製造需求。\n  • 值得關注的是，全球電子產業正積極推動智慧製造，許多企業已從半自動生產逐步邁向全自動化。華嶸建議，企業在規劃射出成型設備時，應同步考量未來五至十年的產線發展，而非僅滿足當前生產需求。透過預留機械手臂路徑、感測器安裝位置及治具空間，不僅可降低日後升級成本，也能縮短智慧工廠建置時程。\n\n📊 三、營運數據與效益指標\n  • 隨著AI伺服器、高速傳輸、電動車及智慧電子設備快速發展，電氣連接器已成為全球電子產業不可或缺的核心零組件。從USB連接器、線束連接器到電源插頭與各類電子端子，產品正朝向小型化、高密度與高可靠度發展，也讓嵌件射出成型技術面臨更高挑戰。對製造業而言，如何兼顧精密定位、生產品質與自動化效率，已成為提升市場競爭力的重要關鍵。\n  • 近年來，全球電子供應鏈持續朝智慧工廠發展，連接器產品生命週期縮短、客製化需求增加，加上人工成本逐年攀升，使企業更加重視射出設備是否具備未來升級彈性。華嶸認為，設備選型不應只看鎖模力與射出容量，更應回歸整體製程需求，包括模具尺寸、嵌件放置方式、線材走線、操作空間以及未來導入機械手臂、自動供料與智慧檢測系統的可能性。\n  • 此次案例中的突尼西亞客戶，主要生產USB連接器、線纜連接器、線束連接器、電源插頭及端子包覆射出等產品。在評估多種設備方案後，最終選擇華嶸YC-2S無拉桿式立式射出成型機，主要原因在於其三面開放式模具空間設計，能有效降低長型線材及金屬嵌件操作時的干涉問題，大幅提升人工上下料效率，也更有利於未來整合自動化設備。\n  • 華嶸表示，無拉桿式設計最大的優勢，在於模具區域更加開放，操作人員可輕鬆完成嵌件放置與產品取出，同時低機台高度與符合人體工學的操作平台，也能降低長時間作業的疲勞感，提升整體生產效率。若客戶未來規劃導入機械手臂、自動供料、感測器或視覺檢測設備，開放式機構亦能提供更大的整合彈性。\n\n💡 四、戰略佈局與產業影響\n  • 華嶸強調，電氣連接器雖然體積小，但對精度與穩定性的要求極高，每一次嵌件定位、每一次射出循環，都直接影響產品可靠度與品牌信譽。未來隨著AI、高速運算、5G、電動車及工業自動化市場持續成長，連接器需求將持續攀升，而具備高精度、智慧化與自動化整合能力的射出成型設備，也將成為電子製造業提升競爭力的重要關鍵。\n  • 官方YT: https://www.youtube.com/@HUARONGGROUP",
+    "key_metric": "AI與電動車帶動連接器需求 華嶸打造嵌件射出智慧生產方案 | 熱... │ 經濟日報 (via Google News)",
+    "rationale": "對應領域：AI、電動車、智慧電動車。 切入點：【AI、電動車、智慧電動車 視角】聚焦『AI與電動車帶動連接器需求 華嶸打造嵌件射出智慧生產方案』之技術落地與實務應用，解析如何透過 AI 技術實踐【AI、電動車、智慧電動車】與效益提升。直接契合本週《AI 加速電動車革命：從電池管理到智慧駕駛》之【AI、電動車、智慧電動車】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 經濟日報 (via Google News) 報導，對製造業而言，如何兼顧精密定位、生產品質與自動化效率，已成為提升市場競爭力的重要關鍵。隨著AI伺服器、高速傳輸、電動車及智慧電子設備快速發展，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：邊緣 AI 感測與自動化控制 / 車用算力與 BMS 智慧管理系統。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：邊緣 AI 感測與自動化控制 / 車用算力與 BMS 智慧管理系統",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：AI、電動車、智慧電動車。 切入點：【AI、電動車、智慧電動車 視角】聚焦『AI與電動車帶動連接器需求 華嶸打造嵌件射出智慧生產方案』之技術落地與實務應用，解析如何透過 AI 技術實踐【AI、電動車、智慧電動車】與效益提升。直接契合本週《AI 加速電動車革命：從電池管理到智慧駕駛》之【AI、電動車、智慧電動車】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "domain": "AI 加速電動車",
+    "tech_stack": "車用算力與 BMS 智慧管理系統",
+    "badge_class": "badge-manufacturing",
+    "title": "TSLA Q2 FY2026：從電動車廠轉型「實體AI平台」｜TN科技筆記(TechNotes) - 方格子 - Vocus",
+    "pub_date": "2026-07-27 06:00",
+    "source": "Vocus (via Google News)",
+    "author": "Vocus 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE4yQXVzQTJXSV9fT1lfVXI1ZkRrY3g2VTNHdUJqVk8zYnFRclI5MXlld2p0c2FBbmVmUkRVelFaZVV0dFVNZmswRnFzSVJ0VndHQ3R6ODFtZHB1RHRzdmfSAWNBVV95cUxQV2R4VnFMZVEyTEx5TXA2VUVFaTZkS2dUZV9sellfbXNKUk1DazZrVkVaem5TOE91ODd2akw1Qmg0dmVhbzZHRjFzYlg4a3hpMXI0Ukp3WFJlSl9Pa3FVWHBpbWM?oc=5",
+    "cover_image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+    "summary": "特斯拉已經逐漸被重新定義為一家「實體人工智慧平台公司」，它的未來產品線涵蓋了在實體世界中運作的 AI 終端設備（如全自動駕駛汽車、Optimus 人形機器人）。2026年第二季的特斯拉，已經無法單純用「賣出多少輛電動車」來衡量，這家公司正進入從傳統硬體製造商，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：TSLA Q2 FY2026：從電動車廠轉型「實體AI平台」｜TN科技筆記(TechNotes) - 方格子 - Vocus\n📰 來源：Vocus (via Google News) | 📅 發布日期：2026-07-27 06:00\n🔗 原文網址：https://vocus.cc/article/6a6213abfd89780001ee733a\n🏷️ 領域分類：AI 加速電動車\n\n📌 一、事件背景與報導摘要\n  • 2026年第二季的特斯拉，已經無法單純用「賣出多少輛電動車」來衡量，這家公司正進入從傳統硬體製造商，全面轉型為「實體人工智慧（Physical AI）平台」。這份報告不僅包含了創紀錄的營收，更隱藏著毛利率壓縮的陣痛、史上最龐大的資本支出計畫，以及牽動全球科技格局的半導體佈局。\n  • 最大的隱憂在於史上最龐大的資本支出（CAPEX）週期。為了換取在 AI 領域的絕對領先時間優勢，2026 年第二季 CAPEX 暴增 142% 達到 57.89 億美元，導致當季自由現金流轉為負 10.92 億美元，結束了先前的正向紀錄。管理層預期 2026 年全年 CAPEX 將超過 250 億美元，並已確保了 300 億美元的債務融資額度。\n\n🔍 二、關鍵技術與架構細節\n  • 此外，第一季曾有約 2.3 億美元的一次性保固利益未在此季重複出現，且能源業務因供應商電池單元問題認列了 2.4 億美元的保固費用調整，這些都成為拖累當季獲利的關鍵因素。這種「增收不增利」的現象，正是推動特斯拉必須加速朝向軟體與 AI 轉型的主因。\n  • 面對傳統硬體業務的利潤瓶頸，特斯拉將未來的價值增長完全押注於 Optimus（人形機器人）、Robotaxi（無人駕駛計程車）以及全自動駕駛（FSD）未來所帶來的影響。\n  • 在競爭對手透過極致的供應鏈成本控制持續壓低終端售價的情況下，特斯拉未來的定價權已經從硬體轉移至軟體生態與極致的垂直整合。\n  • 在硬體供應鏈方面，特斯拉展現了難以複製的垂直整合能力。為了生產市場上尚無現成供應鏈的 Optimus，特斯拉從零開始內部研發金屬粉末射出成型（MIM）零件與柔性印刷電路板。同時，其在德州佈局 30 GWh 鋰精煉廠、自製 4680 電池，並與美光（Micron）等大廠綁定戰略產能，賦予了其極強的供應鏈韌性。\n\n📊 三、營運數據與效益指標\n  • 如果將其視為一家面臨成長瓶頸、深陷價格戰的「傳統電動車硬體製造商」，那麼它目前高達 180 倍以上的預估本益比（相較於傳統車廠低於 15 倍的本益比），無疑存在嚴重的定價錯誤。特斯拉已經逐漸被重新定義為一家「實體人工智慧平台公司」，它的未來產品線涵蓋了在實體世界中運作的 AI 終端設備（如全自動駕駛汽車、Optimus 人形機器人），以及支撐這些 AI 運作的底層基礎設施（如 Megapack 儲能系統與超級算力中心）。當資本市場將未來這些軟體應用的爆發性需求計入當前股價，這千億美元級別的估值溢價便擁有了邏輯支撐。\n  • 2026 年第二季，特斯拉交出了一份充滿戲劇性結構分化的成績單。整體而言，公司的總營收達到了創紀錄的 282.36 億美元，較去年同期成長 26%，且過去十二個月的滾動營收（TTM）更是首度突破了 1,000 億美元的重大關卡。\n  • 在交車表現上，特斯拉結束長達兩年的銷售疲軟，2026 年第二季全球交車量達到 480,126 輛，年增 25%，大幅超越市場預估 40.6 萬輛，顯示歐美市場市占率正在復甦。\n  • 然而，這波銷量復甦主要依賴激進的定價策略與金融補貼，導致汽車業務的毛利率（排除碳積分）從第一季的 19.2% 嚴重壓縮至 16.3%。經調整後的每股盈餘（EPS）僅為 0.33 美元，不及市場預期的 0.51 至 0.54 美元。\n\n💡 四、戰略佈局與產業影響\n  • 伴隨著這種認知體系的轉換，特斯拉的潛在市場範圍（Total Addressable Market, TAM）正在擴張：\n  • 其中最具風險的投資是「Terafab 計畫」。這是一座由特斯拉、SpaceX 與 Intel 深度合作的巨型半導體晶圓廠，目的是解決未來的 AI 晶片短缺。該廠預計落腳德州，總投資規模高達驚人的 1,190 億美元，並計畫採用 Intel 製程技術於 2027 年量產。跨足極度資本密集且良率要求極高的先進半導體製造，為特斯拉未來的現金流與執行力帶來了巨大的不確定性。",
+    "key_metric": "TSLA Q2 FY2026：從電動車廠轉型「實體AI平台」｜T... │ Vocus (via Google News)",
+    "rationale": "對應領域：AI、電動車、智慧電動車。 切入點：【AI、電動車、智慧電動車 視角】聚焦『TSLA Q2 FY2026：從電動車廠轉型「實體AI平台」...』之技術落地與實務應用，解析如何透過 AI 技術實踐【AI、電動車、智慧電動車】與效益提升。直接契合本週《AI 加速電動車革命：從電池管理到智慧駕駛》之【AI、電動車、智慧電動車】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 Vocus (via Google News) 報導，特斯拉已經逐漸被重新定義為一家「實體人工智慧平台公司」，它的未來產品線涵蓋了在實體世界中運作的 AI 終端設備（如全自動駕駛汽車、Optimus 人形機器人）。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：車用算力與 BMS 智慧管理系統。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：車用算力與 BMS 智慧管理系統",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：AI、電動車、智慧電動車。 切入點：【AI、電動車、智慧電動車 視角】聚焦『TSLA Q2 FY2026：從電動車廠轉型「實體AI平台」...』之技術落地與實務應用，解析如何透過 AI 技術實踐【AI、電動車、智慧電動車】與效益提升。直接契合本週《AI 加速電動車革命：從電池管理到智慧駕駛》之【AI、電動車、智慧電動車】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "domain": "AI 加速電動車",
+    "tech_stack": "車用算力與 BMS 智慧管理系統",
+    "badge_class": "badge-manufacturing",
+    "title": "雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮 - 蕃新聞",
+    "pub_date": "2026-07-13 07:00",
+    "source": "蕃新聞 (via Google News)",
+    "author": "蕃新聞 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE51SWlvajJUQkJMRlVpYWFkekhyMFdicjdlT3NIclUyMFVsbUtPanFxcW5XOXg0cU9ZT0JXMkdGemptY2hGWmJJeWdNZ2xJbzFTLWc?oc=5",
+    "cover_image": "https://images.unsplash.com/photo-1558441719-6705546fe49b?auto=format&fit=crop&w=800&q=80",
+    "summary": "雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮 蕃新聞。建議企業追蹤此案例後續發展，以評估對同業影響，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮 - 蕃新聞\n📰 來源：蕃新聞 (via Google News) | 📅 發布日期：2026-07-13 07:00\n🔗 原文網址：https://n.yam.com/Article/20260713245088\n🏷️ 領域分類：AI 加速電動車\n\n📌 一、事件背景與報導摘要\n  • 雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮  蕃新聞",
+    "key_metric": "雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮 - 蕃新... │ 蕃新聞 (via Google News)",
+    "rationale": "對應領域：AI、電動車、智慧電動車。 切入點：【AI、電動車、智慧電動車 視角】聚焦『雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮』之技術落地與實務應用，解析如何透過 AI 技術實踐【AI、電動車、智慧電動車】與效益提升。直接契合本週《AI 加速電動車革命：從電池管理到智慧駕駛》之【AI、電動車、智慧電動車】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 蕃新聞 (via Google News) 報導，雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮 蕃新聞。建議企業追蹤此案例後續發展，以評估對同業影響，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：車用算力與 BMS 智慧管理系統。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：車用算力與 BMS 智慧管理系統",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：AI、電動車、智慧電動車。 切入點：【AI、電動車、智慧電動車 視角】聚焦『雲科大成立智慧電動車人才培育基地 打造AI智慧移動重鎮』之技術落地與實務應用，解析如何透過 AI 技術實踐【AI、電動車、智慧電動車】與效益提升。直接契合本週《AI 加速電動車革命：從電池管理到智慧駕駛》之【AI、電動車、智慧電動車】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const casesData = (typeof EMBEDDED_CASES !== 'undefined' && EMBEDDED_CASES.length > 0) ? EMBEDDED_CASES : [];
+  const gridContainer = document.getElementById('cases-grid');
+
+  function renderCases(cases) {
+    if (!gridContainer) return;
+    gridContainer.innerHTML = '';
+
+    cases.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'case-card';
+      card.innerHTML = `
+        <div class="case-card-content">
+          <div class="case-top-meta">
+            <span class="case-date-source">📅 ${c.pub_date} │ 📰 ${c.source}</span>
+          </div>
+
+          <h3 class="case-title">${c.title}</h3>
+          <p class="case-summary">${c.summary}</p>
+
+          <div class="case-actions">
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="read-detail-btn">
+              閱讀全文 ↗
+            </a>
+          </div>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderCases(casesData);
+
+  // Keyword Radar Tag Click Handler
+  const kwTags = document.querySelectorAll('.kw-tag');
+  kwTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      kwTags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      const filterKw = tag.getAttribute('data-kw');
+      if (!filterKw || filterKw === 'all') {
+        renderCases(casesData);
+      } else {
+        const filtered = casesData.filter(c => {
+          const fullText = (c.title + ' ' + c.summary + ' ' + c.full_digest + ' ' + c.rationale).toLowerCase();
+          return fullText.includes(filterKw.toLowerCase());
+        });
+        renderCases(filtered.length > 0 ? filtered : casesData);
+      }
+    });
+  });
+
+  // Checklist Interactive State
+  const checkBoxes = document.querySelectorAll('.chk-box');
+  checkBoxes.forEach((box, idx) => {
+    const savedState = localStorage.getItem(`newsletter_chk_${idx}`);
+    if (savedState === 'true') {
+      box.checked = true;
+    }
+    box.addEventListener('change', () => {
+      localStorage.setItem(`newsletter_chk_${idx}`, box.checked);
+    });
+  });
+
+  // Reader Feedback & Floating Modal Interactions
+  const floatingBtn = document.getElementById('floating-feedback-btn');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const modalClose = document.getElementById('feedback-modal-close');
+
+  if (floatingBtn && feedbackModal) {
+    floatingBtn.addEventListener('click', () => {
+      feedbackModal.classList.add('active');
+    });
+  }
+
+  if (modalClose && feedbackModal) {
+    modalClose.addEventListener('click', () => {
+      feedbackModal.classList.remove('active');
+    });
+  }
+
+  if (feedbackModal) {
+    feedbackModal.addEventListener('click', (e) => {
+      if (e.target === feedbackModal) {
+        feedbackModal.classList.remove('active');
+      }
+    });
+  }
+
+  const allFeedbackBtns = document.querySelectorAll('.feedback-btn');
+  let selectedRating = null;
+
+  allFeedbackBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      allFeedbackBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRating = btn.getAttribute('data-rating');
+    });
+  });
+
+  function handleFeedbackSubmit(inputEl, submitBtn, modalToClose) {
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', () => {
+      const comment = inputEl ? inputEl.value.trim() : '';
+      if (!selectedRating && !comment) {
+        alert('請先點選滿意度評分或填寫意見建議，謝謝！');
+        return;
+      }
+
+      const feedbackData = {
+        rating: selectedRating || '5',
+        comment: comment,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('reader_feedback_submitted', JSON.stringify(feedbackData));
+      } catch(e) {}
+
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = '✅ 反饋成功！';
+      submitBtn.style.background = '#166534';
+
+      if (inputEl) inputEl.value = '';
+
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.background = '';
+        if (modalToClose) {
+          modalToClose.classList.remove('active');
+        }
+      }, 1800);
+    });
+  }
+
+  const inlineSubmit = document.getElementById('feedback-submit-btn');
+  const inlineInput = document.getElementById('feedback-input-text');
+  handleFeedbackSubmit(inlineInput, inlineSubmit, null);
+
+  const modalSubmit = document.getElementById('modal-feedback-submit');
+  const modalInput = document.getElementById('modal-feedback-text');
+  handleFeedbackSubmit(modalInput, modalSubmit, feedbackModal);
+});
+
+
+
+</script>
+</body>
+</html>

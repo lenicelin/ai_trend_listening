@@ -1,0 +1,22 @@
+# Environment variables & secrets (CRITICAL: Do NOT commit API keys!)
+.env
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache & Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Scratch & Logs
+scratch/
+*.log
+
+# System Files
+.DS_Store
+Thumbs.db

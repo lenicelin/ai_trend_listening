@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trend Listening 電子報 | 職能自動化革命：AI Agent 重塑企業工作模式</title>
+  <meta name="description" content="AI Trend Listening 電子報：職能自動化革命：AI Agent 重塑企業工作模式 實務案例與落地戰略精選">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-main: #f4f7fb;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(255, 255, 255, 0.9);
+  
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --primary-blue-light: #eff6ff;
+  --dark-btn: #111827;
+  --dark-btn-hover: #1f2937;
+  
+  --text-title: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-subtle: #e2e8f0;
+  --border-card: #edf2f7;
+  
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  --shadow-card-hover: 0 20px 40px -15px rgba(37, 99, 235, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.1rem 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.3px;
+}
+
+.issue-badge {
+  background: var(--primary-blue-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.theme-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+  color: var(--text-title);
+}
+
+.hero-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hashtag {
+  background: #f1f5f9;
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.lead-in-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--primary-blue);
+  padding: 1.75rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+}
+
+.lead-in-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-title);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.lead-in-header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.lead-in-intro {
+  color: var(--text-body);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.lead-in-insight-box {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #cbd5e1;
+}
+
+.insight-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.insight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-list li {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.65;
+  margin-bottom: 0.65rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.insight-list li:last-child {
+  margin-bottom: 0;
+}
+
+.insight-list li::before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.lead-in-cases-preview {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.preview-cases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preview-cases-list li {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.preview-cases-list li:last-child {
+  margin-bottom: 0;
+}
+
+.preview-case-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.lead-in-action-tip {
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+.highlights-container {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.highlights-merged-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.highlight-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.highlight-item:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.hl-icon {
+  font-size: 1.3rem;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.2rem;
+}
+
+.highlight-item p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.45;
+  text-align: justify;
+}
+
+/* Section Title */
+.section-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-title);
+}
+
+/* Cases Grid (Acelia Editorial SaaS Layout) */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case-card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.case-card-content {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.case-domain-badge {
+  display: none !important;
+}
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.badge-manufacturing { background: linear-gradient(135deg, #059669, #10b981); }
+.badge-supplychain { background: linear-gradient(135deg, #0284c7, #06b6d4); }
+.badge-hr { background: linear-gradient(135deg, #db2777, #f43f5e); }
+.badge-marketing { background: linear-gradient(135deg, #ea580c, #f97316); }
+.badge-sales { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.badge-service { background: linear-gradient(135deg, #4f46e5, #6366f1); }
+.badge-retail { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+.badge-finance { background: linear-gradient(135deg, #059669, #34d399); }
+.badge-legal { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.badge-enterprise { background: linear-gradient(135deg, #475569, #64748b); }
+
+.case-date-source {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.case-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--text-title);
+  margin-bottom: 0.75rem;
+}
+
+.case-summary {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.case-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.read-detail-btn {
+  background: var(--dark-btn);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.read-detail-btn:hover {
+  background: var(--dark-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.25);
+}
+
+/* Modal Overlay & Detail View */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-modal);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 1.75rem 2rem 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-title);
+  line-height: 1.4;
+  padding-right: 2.5rem;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+}
+
+.modal-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.modal-tab-btn.active {
+  background: var(--dark-btn);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(17, 24, 39, 0.2);
+}
+
+.modal-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+.modal-panel {
+  display: none;
+}
+
+.modal-panel.active {
+  display: block;
+}
+
+.panel-section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 0.85rem;
+}
+
+.panel-intro-text {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  background: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-blue);
+  text-align: justify;
+}
+
+.panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panel-list li {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.panel-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.modal-footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 4rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-sub {
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .hero-main-title { font-size: 1.6rem; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .modal-container { margin: 1rem; max-height: 85vh; }
+  .modal-header, .modal-body, .modal-footer { padding: 1.25rem; }
+}
+
+/* Executive Dashboard Section */
+.executive-dashboard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.dashboard-header {
+  margin-bottom: 1.75rem;
+}
+
+.dashboard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-badge-pill {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fbbf24;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.dashboard-title-group h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.3px;
+}
+
+.dashboard-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Takeaways Grid - Horizontal Presentation */
+.takeaways-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.takeaway-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.35rem 1.6rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.takeaway-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+}
+
+.takeaway-card.card-risk::before { background: linear-gradient(180deg, #ef4444, #f97316); }
+.takeaway-card.card-roi::before { background: linear-gradient(180deg, #10b981, #059669); }
+.takeaway-card.card-gov::before { background: linear-gradient(180deg, #3b82f6, #6366f1); }
+
+.takeaway-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.takeaway-card .card-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.takeaway-card h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-title, #0f172a);
+  line-height: 1.4;
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 260px;
+}
+
+.takeaway-bullets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 0.85rem 1.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.takeaway-bullet-item {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-body, #334155);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.takeaway-bullet-item span:last-child {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .takeaway-bullets {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Dashboard Widgets */
+.dashboard-widgets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.widget-box {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.widget-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kw-tag {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: var(--text-body);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kw-tag:hover, .kw-tag.active {
+  background: var(--primary-blue-light);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  cursor: pointer;
+  line-height: 1.45;
+  user-select: none;
+}
+
+.check-item .chk-box {
+  accent-color: var(--primary-blue);
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.check-item input:checked + span {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+  .takeaways-grid { grid-template-columns: 1fr; }
+  .dashboard-widgets { grid-template-columns: 1fr; }
+}
+
+/* ==================================================
+   Reader Feedback Section & Compact Floating Modal
+   ================================================== */
+.reader-feedback-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.feedback-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feedback-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.feedback-icon {
+  width: 38px;
+  height: 38px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.feedback-title-group h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.feedback-title-group p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.feedback-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.feedback-btn:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.feedback-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.feedback-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.feedback-input {
+  flex: 1;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #f8fafc;
+}
+
+.feedback-input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.feedback-submit-btn {
+  background: var(--dark-btn);
+  color: #ffffff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.feedback-submit-btn:hover {
+  background: var(--dark-btn-hover);
+}
+
+/* Floating Trigger Pill */
+.floating-feedback-pill {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 99;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.35);
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.floating-feedback-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: #1e293b;
+  box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.5);
+}
+
+/* Compact Modal */
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.feedback-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.feedback-modal-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-modal);
+  position: relative;
+  transform: translateY(15px) scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feedback-modal-overlay.active .feedback-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.feedback-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.feedback-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+
+</style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <span class="brand-title">AI Trend Listening</span>
+      </a>
+      <div class="issue-badge">
+        Vol. 2026 Issue #1 │ 7月號創刊專題
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <!-- Main Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <div class="theme-tag-pill">
+          <span class="sparkle-icon">✨</span>
+          AI趨勢周報
+        </div>
+        
+        <h1 class="hero-main-title">職能自動化革命：AI Agent 重塑企業工作模式</h1>
+        
+        <div class="hero-hashtags">
+          <span class="hashtag">#EnterpriseAI</span>
+          <span class="hashtag">#AITrends</span>
+          <span class="hashtag">#DigitalTransformation</span>
+          <span class="hashtag">#DeltaElectronics</span>
+        </div>
+
+        <div class="lead-in-card">
+          <h3>📖 本期導讀 (Vol. 2026 Issue #2)</h3>
+          <div class="lead-in-header-badge">💡 專題深度解讀</div>
+          <p class="lead-in-intro">全球企業應用 AI 正經歷從「單點工具輔助」跨越至「以 AI Agent 重新定義工作流」的關鍵轉折。本期聚焦「<strong>職能自動化革命：AI Agent 重塑企業工作模式</strong>」，深入解析 <strong>職能自動化、 AI協作、 人機協作、 工作流自動化、工作模式</strong> 等前瞻領域的實務演進與落地邏輯。</p>
+          
+          <div class="lead-in-insight-box">
+            <h4 class="insight-subtitle">🚀 本期精選案例三大核心洞察：</h4>
+            <ul class="insight-list">
+              <li><strong>一、職能自動化革命轉型與實務落地（案例：Walmart如何用數據打造永續...）：</strong> 從本期案例觀察，職能自動化革命 領域正加速推進。Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險， 同仁應關注相關技術落地效益並建立實作評估指標。</li>
+              <li><strong>二、職能自動化革命關鍵技術與系統韌性（案例：50% 成本實現超越業界防護效能...）：</strong> 隨著技術深化，職能自動化革命 之架構整合與運作穩定性成為勝負關鍵。為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。 凸顯建立動態應對機制的重要性。</li>
+              <li><strong>三、職能自動化革命數據與戰略價值之規模化驗證（案例：工作流程自動化平臺n8n表達式沙...）：</strong> 規模化落地的關鍵在於將數據指標轉化為實際營運效益。工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令。 為後續業務推動提供具體參考路徑。</li>
+            </ul>
+          </div>
+
+          <div class="lead-in-action-tip">💡 <strong>實務應用建議：</strong> 建議同仁閱讀本期電子報時，對照案例中【LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制、LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制】等落地經驗，檢視團隊內部流程與產品對接的實務契機。</div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Cases Section Header -->
+    <div class="section-header">
+      <h2>🎯 本期精選 6 大深度實務案例</h2>
+    </div>
+
+    <!-- Cases Grid -->
+    <section class="cases-grid" id="cases-grid">
+      <!-- Dynamically Populated by newsletter.js -->
+    </section>
+
+    <!-- Reader Feedback Section -->
+    <section class="reader-feedback-section">
+      <div class="feedback-card">
+        <div class="feedback-card-top">
+          <div class="feedback-header">
+            <div class="feedback-icon">💬</div>
+            <div class="feedback-title-group">
+              <h3>本期電子報讀者意見反饋</h3>
+              <p>您的實務意見是我們持續優化專題選題與內容品質的核心動力</p>
+            </div>
+          </div>
+          <div class="feedback-actions">
+            <button class="feedback-btn" data-rating="5">💡 獲益良多 (5★)</button>
+            <button class="feedback-btn" data-rating="4">👍 內容紮實 (4★)</button>
+            <button class="feedback-btn" data-rating="3">📝 仍需優化 (3★)</button>
+          </div>
+        </div>
+
+        <div class="feedback-input-group">
+          <input type="text" class="feedback-input" id="feedback-input-text" placeholder="寫下您對本期選題或內容的建議（選填）...">
+          <button class="feedback-submit-btn" id="feedback-submit-btn">送出反饋</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+                                                <!-- Footer -->
+  <footer class="footer">
+    <p>AI Trend Listening 科技與產業趨勢周報 &copy; 2026 | 專為高層決策者與團隊打造的企業 AI 情報</p>
+    <p class="footer-sub">資訊來源包括權威產業媒體、研究機構與新聞數據庫；內容經由主管評選與綜合編撰，精選新聞歸屬原創作者所有。</p>
+  </footer>
+
+  <!-- Floating Feedback Trigger Pill -->
+  <div class="floating-feedback-pill" id="floating-feedback-btn">
+    <span class="fb-icon">💬</span>
+    <span>意見反饋</span>
+  </div>
+
+  <!-- Compact Feedback Modal Overlay -->
+  <div class="feedback-modal-overlay" id="feedback-modal">
+    <div class="feedback-modal-box">
+      <button class="feedback-modal-close" id="feedback-modal-close">✕</button>
+      <div class="feedback-header" style="margin-bottom: 1rem;">
+        <div class="feedback-icon">⚡</div>
+        <div class="feedback-title-group">
+          <h3>讀者快速意見反饋</h3>
+          <p>請給予本期內容簡單評分或建議</p>
+        </div>
+      </div>
+      
+      <div class="feedback-actions" style="margin-bottom: 1rem; justify-content: center;">
+        <button class="feedback-btn" data-rating="5">💡 非常有幫助</button>
+        <button class="feedback-btn" data-rating="4">👍 還不錯</button>
+        <button class="feedback-btn" data-rating="3">📝 提出建議</button>
+      </div>
+
+      <div class="feedback-input-group" style="flex-direction: column;">
+        <input type="text" class="feedback-input" id="modal-feedback-text" placeholder="可在此填寫具體建議..." style="width: 100%;">
+        <button class="feedback-submit-btn" id="modal-feedback-submit" style="width: 100%; margin-top: 0.5rem;">確認送出</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="newsletter.js"></script>
+<script>
+const EMBEDDED_CASES = [
+  {
+    "id": 1,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳",
+    "pub_date": "2026-07-30 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177760",
+    "cover_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    "summary": "Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。生成式AI快速發展後，企業開始重新思考AI的價值，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177760\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。\n  • 對零售業而言，食品浪費一直是永續管理的重要挑戰。生鮮商品具有保存期限短、需求波動大的特性，若補貨與銷售預測不精準，容易造成商品過期報廢。\n\n🔍 二、關鍵技術與架構細節\n  • 生成式AI快速發展後，企業開始重新思考AI的價值。對全球最大零售商Walmart而言，AI不只是提升銷售推薦或員工效率的工具，也逐漸成為改善零售流程、降低資源浪費的重要技術。在Walmart最新的FY2026永續報告書，Walmart揭露他們如何利用AI、資料分析、自動化與數位平臺，將永續目標融入日常營運，從食品管理、供應鏈減碳到AI治理，建立以數據驅動的永續零售模式。\n  • Walmart並非單純以AI解決所有永續問題，而是依照不同場景導入不同數位能力。其中，AI主要用於提升食品管理與營運決策效率，而供應鏈減碳則依靠數據平臺與碳管理工具，協助供應商共同降低排放。\n  • Walmart在報告書中指出，他們正利用人工智慧（AI）、機器學習與進階分析等技術，改善食品生命周期管理。透過分析歷史銷售資料、庫存狀態、季節因素與消費趨勢，AI模型協助門市更精準預測需求，調整補貨策略。\n  • 此外，Walmart也運用影像辨識與感測資料，協助判斷生鮮商品品質與保存狀態，讓門市能更早發現可能浪費的商品，提前採取降價促銷、優先銷售或食品捐贈等措施。\n\n💡 三、戰略佈局與產業影響\n  • 這些數位工具協助Walmart改善食品管理流程。在報告期間，Walmart全球食品捐贈量已超過9億磅。\n  • 除了利用AI分析資料與預測需求，Walmart也將生成式AI導入員工工作流程，讓AI從幕後分析工具，進一步成為員工日常工作的智慧助手。\n  • 生成式AI可協助員工透過自然語言方式取得企業資訊、查詢工作流程與獲得營運建議，降低過去需要人工搜尋與整理資訊的時間。相較於傳統AI用於分析歷史資料、預測未來趨勢，生成式AI則讓員工能直接與企業知識互動，將AI能力延伸至更多零售場景。\n  • 生成式AI的價值在於提升員工生產力與決策效率，讓第一線人員能更快速取得所需資訊。\n  • 隨著AI逐漸進入商品管理、員工服務與營運決策等核心流程，AI帶來的風險也成為企業永續經營面臨的新挑戰。\n  • 因此Walmart提出內部Responsible AI的治理架構，以確保AI在企業內部能被安全且負責任地使用，同時也是建立數位信任(Digital Trust) 的基礎。",
+    "key_metric": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺... │ iThome 科技報",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協作」才是真正的競爭力",
+    "pub_date": "2026-07-29 23:50",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://finance.technews.tw/2026/07/30/survey-shows-more-than-half-of-companies-regret-laying-off-employees-due-to-ai/",
+    "cover_image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    "summary": "許多企業導入AI時，誤以為演算法能完美接管既有工作，卻忽略現有AI輸出依然有不穩定與缺乏洞察的局限。當企業倉促裁撤資深員工與主管，剩下的團隊往往因缺乏產業經驗與核心決策者，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協作」才是真正的競爭力\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-07-29 23:50\n🔗 原文網址：https://finance.technews.tw/2026/07/30/survey-shows-more-than-half-of-companies-regret-laying-off-employees-due-to-ai/\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • 許多企業導入AI時，誤以為演算法能完美接管既有工作，卻忽略現有AI輸出依然有不穩定與缺乏洞察的局限。當企業倉促裁撤資深員工與主管，剩下的團隊往往因缺乏產業經驗與核心決策者，無法精準評估AI產出品質；AI輸出的不一致性與錯誤，迫使企業必須花費雙倍時間以人工二次覆核與除錯，反而導致冗務激增與生產力倒退。福特汽車發現自動化系統無法解決複雜的品質瑕疵，IBM則發現AI無法獨立處理複雜的HR人際需求，這都證明AI只是強大的增幅器，運算基礎必須建立在人類資深專業知識與經驗上，缺乏專業人才，再昂貴的AI工具也只是快速生產低品質的決策垃圾。\n\n🔍 二、關鍵技術與架構細節\n  • 人工智慧的終極使命，是將人類從重複性的機械勞動解放，執行更具創造力與影響力的任務。對所有企業決策者而言，將資金與資源投注於員工的AI技能提升與人機協作生態系建立，才是確保企業在數位浪潮保有一流競爭力、實現永續發展的唯一定律。\n\n📊 三、營運數據與效益指標\n  • 當企業意識到科技無法憑空創造經驗，市場競爭的主軸就從「誰擁有一流的AI工具」轉向「誰能建立人機協作（Human-Machine Collaboration）體系」。研究顯示，雖然企業領導者對AI取代人力的恐懼從2024年54%降至2026年48%，但高達80%領導者計畫進行員工AI再培訓（Reskilling），並有51%企業導入AI使用規範與策略。企業開始理解，解決全球人才荒的最佳方式不是開除員工，而是再培訓與增加教育訓練（L&D）預算，協助現有員工掌握與AI協同工作的技能。如此能降低員工因恐懼AI而離職的風險，更能激發組織內部的創新活力，讓人才專注高價值的策略判斷與情感溝通。\n  • 下一波企業競爭的勝負分水嶺，在組織是否具備調配人機協作生態系的軟實力。研究指出，至今仍有38%企業領導者坦言並不了解AI對業務發揮作用的真正路徑，而27%企業缺乏清晰的AI轉型藍圖。盲目跟風導入AI與粗暴裁員，只會造成企業內部經驗斷層、生產力下滑與人才流失的巨大隱形損失；相反地，懂得將人類的戰略直覺、批判性思考與AI的極速運算能力深度融合的組織，才能轉成真正的商業價值。未來最具競爭力的企業，必定是那些懂得重塑工作流程、建立清晰合規政策，並讓員工在AI工具的加持下放放大自我價值的企業。",
+    "key_metric": "AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協作」... │ 科技新報 TechNews",
+    "rationale": "對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，許多企業導入AI時，誤以為演算法能完美接管既有工作，卻忽略現有AI輸出依然有不穩定與缺乏洞察的局限。當企業倉促裁撤資深員工與主管，剩下的團隊往往因缺乏產業經驗與核心決策者，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模型與代理式平台",
+    "pub_date": "2026-07-28 23:20",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://infosecu.technews.tw/2026/07/29/microsoft-touts-cost-saving-ai-model-for-cybersecurity/",
+    "cover_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "summary": "為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。OpenAI 上週表示，在一項測試中，其模型成功利用一項安全漏洞，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模型與代理式平台\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-07-28 23:20\n🔗 原文網址：https://infosecu.technews.tw/2026/07/29/microsoft-touts-cost-saving-ai-model-for-cybersecurity/\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • OpenAI 上週表示，在一項測試中，其模型成功利用一項安全漏洞，並對 AI 新創公司 Hugging Face 的基礎設施發動攻擊。Hugging Face 使用中國 AI 新創「智譜」（Z.ai）的模型進行數位鑑識分析。這起事件突顯出，當前惡意攻擊者能透過生成式 AI 模型方便快速地對特定目標發動漏洞攻擊。\n\n🔍 二、關鍵技術與架構細節\n  • 為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。雖然 Google 上週二（7/21）才推出自家 AI 網安模型 Gemini 3.5 Flash Cyber，但比起在此之前毫無動作的微軟也快了一週的時間。\n  • 如今微軟也嘗試追上競爭者的腳步，推出全新 MAI-Cyber-1-Flash 模型與 Project Perception，後者是一套用於發現並修補網路安全弱點的 AI 代理集。\n\n📊 三、營運數據與效益指標\n  • 由於投資人對微軟長久以來高度仰賴 OpenAI 的看法從正面轉向至負面，甚至視之為一項風險。致使微軟今年股價已下跌 19%。為了挽回投資者的信心，今年，微軟已宣布推出可在 GitHub Copilot 工具中生成程式碼的自家模型；近期也開始在 Excel 試算表程式中採用第一方模型。\n  • 根據在 CyberGym AI 網安基準測試中的實測結果，搭載微軟 MAI-Cyber-1-Flash 模型 + OpenAI 通用型 GPT-5.4 的 MDASH（微軟既有多模漏洞管理 AI 代理系統），其整體漏洞評估分析表現達到95.95%，遠勝 Anthropic Mythos 5（83.3%）、Google 3.5 Flash Cyber（83.2%），以及 OpenAI GPT-5.5 Cyber（85.6%）。\n  • Gallot 在官方部落格文章中表示，搭載微軟全新 MAI-Cyber-1-Flash 模型的 MDASH，與目前微軟在 MDASH 中所採用的最佳模型配置相比，可節省近 50% 的成本。他並透露，該 AI 偵測模型會整合至 Project Perception 中。Project Perception 在取得授權後，可建議並實作程式碼修改，也能與非微軟的產品整合。\n  • 微軟 AI 執行長 Mustafa Suleyman 在某次受訪中表示，微軟擁有一套獨特的資料集，而微軟目前使用的資料，還不到其中的 1%。這突顯出微新 MAI-Cyber-1-Flash 模型仍有相當大的提升空間。",
+    "key_metric": "50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模型與... │ 科技新報 TechNews",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。OpenAI 上週表示，在一項測試中，其模型成功利用一項安全漏洞，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "用 AI 把行銷素材規模化、效率提升3-5倍：Expedia 子品牌如何拿捏人機協作的邊界？ - TechOrange 科技報橘",
+    "pub_date": "2026-07-22 00:00",
+    "source": "TechOrange 科技報橘 (via Google News)",
+    "author": "TechOrange 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE44QkhNejBrOERQSFpZejBpcGx2OVVERHJCVU03WmdyVnVSSWlxbWtHZ1BweXBuNkdoUmRORFlUQm8wUVFzQVdVeWJTLTBNck40dldIeF91Wi0yblFfOFhHLTBSR002WFU5Tzc2SQ?oc=5",
+    "cover_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    "summary": "Vrbo 一方面運用 AI 將全球行銷素材生產效率提升 3 至 5 倍，另一方面仍堅持所有涉及房源展示與品牌情感的內容必須由真人與真實場景完成。生成式 AI 正快速改變旅遊產業的行銷模式，但對 Expedia 集團旗下短租品牌 Vrbo 而言，AI 並非全面取代人力的工具，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：用 AI 把行銷素材規模化、效率提升3-5倍：Expedia 子品牌如何拿捏人機協作的邊界？ - TechOrange 科技報橘\n📰 來源：TechOrange 科技報橘 (via Google News) | 📅 發布日期：2026-07-22 00:00\n🔗 原文網址：https://techorange.com/2026/07/22/ai-expedia-vrbo-marketing/\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • 生成式 AI 正快速改變旅遊產業的行銷模式，但對 Expedia 集團旗下短租品牌 Vrbo 而言，AI 並非全面取代人力的工具，而是一套經過嚴格界定的效率引擎。\n  • ＊本文開放合作夥伴轉載，參考資料：《Adage》、《Short Term Rentalz》，首圖來源：Unsplash\n\n🔍 二、關鍵技術與架構細節\n  • Vrbo 一方面運用 AI 將全球行銷素材生產效率提升 3 至 5 倍，另一方面仍堅持所有涉及房源展示與品牌情感的內容必須由真人與真實場景完成，藉此守住品牌最重要的「品質與信任」價值。\n  • Helen Melluish 提到，目前團隊成員普遍認為，生成式 AI 已讓工作效率提升約 3 至 5 倍，許多原本需要花費數天完成的工作，如今只需一、兩個小時即可完成。她認為，AI 不應被視為取代行銷人的威脅，而是讓員工有更多時間投入策略思考與創意發展，尤其讓資淺行銷人才能更快參與高價值決策，而非長時間處理重複性的內容製作工作。\n  • 不過，Vrbo 也明確劃出 AI 的使用邊界。由於品牌核心價值建立在品質與信任之上，因此所有與消費者付費入住直接相關的房源照片與住宿畫面，Vrbo 堅持不以 AI 生成。Helen Melluish 強調，Vrbo 不會憑空創造不存在的 AI 房屋，也不會讓虛擬影像影響消費者的預期，以免破壞品牌長期累積的信任基礎。\n  • 在生成式 AI 快速滲透各行各業的同時，Vrbo 的做法展現出另一種發展方向。AI 被定位為提升效率、擴大規模與強化服務的工具，人類則持續掌握品牌信任、情感傳遞與關鍵決策。對這家旅遊科技公司而言，人機協作的價值並不在於全面自動化，而是在效率與真實之間建立清楚且可長期維持的界線。\n\n📊 三、營運數據與效益指標\n  • Helen Melluish 表示，目前生成式 AI 在這個過程中，最大的價值並非直接創作品牌核心內容，而是協助全球市場快速完成大量素材在地化。透過生成式 AI，團隊現在可以在極短時間內產出數千種不同版本的素材，因應各國市場需求。",
+    "key_metric": "用 AI 把行銷素材規模化、效率提升3-5倍：Expedia 子... │ TechOrange 科技報橘 (via Google News)",
+    "rationale": "對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『用 AI 把行銷素材規模化、效率提升3-5倍：Expedia...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 TechOrange 科技報橘 (via Google News) 報導，Vrbo 一方面運用 AI 將全球行銷素材生產效率提升 3 至 5 倍，另一方面仍堅持所有涉及房源展示與品牌情感的內容必須由真人與真實場景完成。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『用 AI 把行銷素材規模化、效率提升3-5倍：Expedia...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可執行主機命令",
+    "pub_date": "2026-07-31 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177769",
+    "cover_image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80",
+    "summary": "工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令。此案例提示企業應重新評估後續資安與防護策略，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可執行主機命令\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-31 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177769\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • 工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令，官方已於2.31.5與2.32.1完成修補\n  • 雖然該漏洞並非未登入即可利用，攻擊者還是必須先取得有效帳號，以及建立或修改工作流程的權限，不過，一旦成功利用，原本僅能編輯自動化流程的使用者，就可能以n8n服務程序擁有的權限操作主機。\n\n🔍 二、關鍵技術與架構細節\n  • 工作流程自動化平臺n8n修補一項高風險漏洞。已登入且能建立或修改工作流程的使用者，可利用特製的程式碼避開表達式沙箱限制，在執行n8n的主機上執行系統命令。官方已在n8n 2.31.5與2.32.1完成修補，建議使用者升級至這些版本或後續版本。\n  • n8n可將不同網路服務串接成自動化流程，並允許使用者在流程節點中加入JavaScript表達式，處理前一個步驟傳來的資料。為防止這些程式碼直接接觸伺服器底層環境，n8n設有表達式沙箱，也就是將程式碼限制在特定範圍內執行的隔離機制。\n  • 該漏洞與沙箱處理箭頭函式（Arrow Function）的方式有關。箭頭函式是JavaScript中較精簡的函式寫法，部分省略大括號、直接傳回單一運算式的箭頭函式，過去未套用原有的變數替換與檢查程序。攻擊者可藉此接觸原本應由沙箱隔離的Node.js全域物件，再呼叫作業系統功能。\n  • 新版已補上檢查程序，確保直接傳回單一運算式的箭頭函式，其中使用的變數會從受限制的資料環境取得，而不是連到n8n主機的Node.js執行環境。開發團隊也加入測試，確認這類表達式無法再取得主機中的Node.js全域物件，也無法藉此透過內建模組執行系統命令。\n\n💡 三、戰略佈局與產業影響\n  • n8n今年2月曾修補表達式沙箱漏洞CVE-2026-27577，同樣可能讓具備工作流程編輯權限的使用者在主機上執行命令。資安公司Security Joes研究團隊為確認該漏洞的修補措施是否仍可被繞過，重新檢視n8n對不同JavaScript語法的處理方式，發現直接傳回單一運算式的箭頭函式未納入完整檢查，因而找到這項新的沙箱繞過漏洞。\n  • 無法立即升級的管理員，可暫時限制n8n執行個體的存取，並只讓完全可信任的使用者建立或編輯工作流程，但官方表示這些措施無法完全排除風險。",
+    "key_metric": "工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可執行... │ iThome 科技報",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令。此案例提示企業應重新評估後續資安與防護策略，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者提升至Root權限",
+    "pub_date": "2026-07-30 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177767",
+    "cover_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "summary": "Linux網路流量排程子系統存在記憶體已釋放卻仍被使用問題，研究人員透過AI協助發現漏洞與利用程式開發。前述漏洞是STAR Labs研究員Lee Jia Jie藉助AI工具發現這項問題，利用AI協助分析核心程式碼、建立概念驗證，以及最佳化觸發漏洞所需的競爭時間窗口，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者提升至Root權限\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177767\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • Linux網路流量排程子系統存在記憶體已釋放卻仍被使用問題，研究人員透過AI協助發現漏洞與利用程式開發\n\n🔍 二、關鍵技術與架構細節\n  • 資安廠商STAR Labs研究人員近日揭露Linux核心漏洞CVE-2026-53264，這個高風險漏洞已存在數年，CVSS嚴重性評分7.8分，問題存在於負責網路封包流量控制的net/sched子系統，攻擊者可利用記憶體已釋放卻仍被使用（UAF）競爭條件問題，讓本機低權限使用者提升至Root權限，Linux核心上游已完成修補，主要Linux發行版中，包括RHEL、Azure Linux、Debian與Amazon Linux也都已完成修補。\n  • 前述漏洞是STAR Labs研究員Lee Jia Jie藉助AI工具發現這項問題，利用AI協助分析核心程式碼、建立概念驗證，以及最佳化觸發漏洞所需的競爭時間窗口，然後由研究人員進行漏洞驗證與利用程式的開發。",
+    "key_metric": "Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者提升... │ iThome 科技報",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，Linux網路流量排程子系統存在記憶體已釋放卻仍被使用問題，研究人員透過AI協助發現漏洞與利用程式開發。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const casesData = (typeof EMBEDDED_CASES !== 'undefined' && EMBEDDED_CASES.length > 0) ? EMBEDDED_CASES : [];
+  const gridContainer = document.getElementById('cases-grid');
+
+  function renderCases(cases) {
+    if (!gridContainer) return;
+    gridContainer.innerHTML = '';
+
+    cases.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'case-card';
+      card.innerHTML = `
+        <div class="case-card-content">
+          <div class="case-top-meta">
+            <span class="case-date-source">📅 ${c.pub_date} │ 📰 ${c.source}</span>
+          </div>
+
+          <h3 class="case-title">${c.title}</h3>
+          <p class="case-summary">${c.summary}</p>
+
+          <div class="case-actions">
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="read-detail-btn">
+              閱讀全文 ↗
+            </a>
+          </div>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderCases(casesData);
+
+  // Keyword Radar Tag Click Handler
+  const kwTags = document.querySelectorAll('.kw-tag');
+  kwTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      kwTags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      const filterKw = tag.getAttribute('data-kw');
+      if (!filterKw || filterKw === 'all') {
+        renderCases(casesData);
+      } else {
+        const filtered = casesData.filter(c => {
+          const fullText = (c.title + ' ' + c.summary + ' ' + c.full_digest + ' ' + c.rationale).toLowerCase();
+          return fullText.includes(filterKw.toLowerCase());
+        });
+        renderCases(filtered.length > 0 ? filtered : casesData);
+      }
+    });
+  });
+
+  // Checklist Interactive State
+  const checkBoxes = document.querySelectorAll('.chk-box');
+  checkBoxes.forEach((box, idx) => {
+    const savedState = localStorage.getItem(`newsletter_chk_${idx}`);
+    if (savedState === 'true') {
+      box.checked = true;
+    }
+    box.addEventListener('change', () => {
+      localStorage.setItem(`newsletter_chk_${idx}`, box.checked);
+    });
+  });
+
+  // Reader Feedback & Floating Modal Interactions
+  const floatingBtn = document.getElementById('floating-feedback-btn');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const modalClose = document.getElementById('feedback-modal-close');
+
+  if (floatingBtn && feedbackModal) {
+    floatingBtn.addEventListener('click', () => {
+      feedbackModal.classList.add('active');
+    });
+  }
+
+  if (modalClose && feedbackModal) {
+    modalClose.addEventListener('click', () => {
+      feedbackModal.classList.remove('active');
+    });
+  }
+
+  if (feedbackModal) {
+    feedbackModal.addEventListener('click', (e) => {
+      if (e.target === feedbackModal) {
+        feedbackModal.classList.remove('active');
+      }
+    });
+  }
+
+  const allFeedbackBtns = document.querySelectorAll('.feedback-btn');
+  let selectedRating = null;
+
+  allFeedbackBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      allFeedbackBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRating = btn.getAttribute('data-rating');
+    });
+  });
+
+  function handleFeedbackSubmit(inputEl, submitBtn, modalToClose) {
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', () => {
+      const comment = inputEl ? inputEl.value.trim() : '';
+      if (!selectedRating && !comment) {
+        alert('請先點選滿意度評分或填寫意見建議，謝謝！');
+        return;
+      }
+
+      const feedbackData = {
+        rating: selectedRating || '5',
+        comment: comment,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('reader_feedback_submitted', JSON.stringify(feedbackData));
+      } catch(e) {}
+
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = '✅ 反饋成功！';
+      submitBtn.style.background = '#166534';
+
+      if (inputEl) inputEl.value = '';
+
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.background = '';
+        if (modalToClose) {
+          modalToClose.classList.remove('active');
+        }
+      }, 1800);
+    });
+  }
+
+  const inlineSubmit = document.getElementById('feedback-submit-btn');
+  const inlineInput = document.getElementById('feedback-input-text');
+  handleFeedbackSubmit(inlineInput, inlineSubmit, null);
+
+  const modalSubmit = document.getElementById('modal-feedback-submit');
+  const modalInput = document.getElementById('modal-feedback-text');
+  handleFeedbackSubmit(modalInput, modalSubmit, feedbackModal);
+});
+
+
+
+</script>
+</body>
+</html>

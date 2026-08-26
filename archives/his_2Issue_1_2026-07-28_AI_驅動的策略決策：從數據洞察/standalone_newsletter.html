@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Trend Listening 電子報 | AI 驅動的策略決策：從數據洞察到風險預警</title>
+  <meta name="description" content="AI Trend Listening 電子報：AI 驅動的策略決策：從數據洞察到風險預警 實務案例與落地戰略精選">
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-main: #f4f7fb;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(255, 255, 255, 0.9);
+  
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --primary-blue-light: #eff6ff;
+  --dark-btn: #111827;
+  --dark-btn-hover: #1f2937;
+  
+  --text-title: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-subtle: #e2e8f0;
+  --border-card: #edf2f7;
+  
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  --shadow-card-hover: 0 20px 40px -15px rgba(37, 99, 235, 0.12), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.1rem 2rem;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.brand-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.3px;
+}
+
+.issue-badge {
+  background: var(--primary-blue-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.theme-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary-blue-light);
+  color: var(--primary-blue);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 1rem;
+  color: var(--text-title);
+}
+
+.hero-hashtags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hashtag {
+  background: #f1f5f9;
+  color: var(--text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.lead-in-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--primary-blue);
+  padding: 1.75rem 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+}
+
+.lead-in-card h3 {
+  font-size: 1.2rem;
+  color: var(--text-title);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.75rem;
+}
+
+.lead-in-header-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.lead-in-intro {
+  color: var(--text-body);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.lead-in-insight-box {
+  background: #f1f5f9;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #cbd5e1;
+}
+
+/* Revamped Guide Layout Styles */
+.guide-sections-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.guide-section {
+  position: relative;
+  padding: 1.35rem 1.6rem;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+}
+
+.guide-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.guide-section-trend {
+  border-left: 5px solid #2563eb;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.guide-section-cases {
+  border-left: 5px solid #059669;
+  background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+}
+
+.guide-section-delta {
+  border-left: 5px solid #0284c7;
+  background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+}
+
+.guide-section-conclusion {
+  border-left: 5px solid #7c3aed;
+  background: linear-gradient(145deg, #f5f3ff 0%, #faf5ff 100%);
+  border: 1px solid #ddd6fe;
+}
+
+.guide-sub-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.2px;
+}
+
+.guide-text {
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: #334155;
+  margin: 0;
+  font-weight: 400;
+}
+
+.guide-text strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.delta-focus-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #0284c7, #2563eb);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.85rem;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  letter-spacing: 0.3px;
+}
+
+.highlight-pill {
+  display: inline-block;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.96rem;
+  margin: 0 0.2rem;
+  border: 1px solid #bbf7d0;
+}
+
+.insight-subtitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.insight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.insight-list li {
+  font-size: 0.92rem;
+  color: #334155;
+  line-height: 1.65;
+  margin-bottom: 0.65rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.insight-list li:last-child {
+  margin-bottom: 0;
+}
+
+.insight-list li::before {
+  content: "•";
+  color: var(--primary-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.lead-in-cases-preview {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.preview-cases-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.preview-cases-list li {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.preview-cases-list li:last-child {
+  margin-bottom: 0;
+}
+
+.preview-case-badge {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.lead-in-action-tip {
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.9rem;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+.highlights-container {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.highlights-merged-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.highlight-title {
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-card);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.highlight-item:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+.hl-icon {
+  font-size: 1.3rem;
+}
+
+.highlight-item strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.2rem;
+}
+
+.highlight-item p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.45;
+  text-align: justify;
+}
+
+/* Section Title */
+.section-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-title);
+}
+
+/* Cases Grid (Acelia Editorial SaaS Layout) */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.card-img-wrap {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case-card:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.case-card-content {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-top-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.case-domain-badge {
+  display: none !important;
+}
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.badge-manufacturing { background: linear-gradient(135deg, #059669, #10b981); }
+.badge-supplychain { background: linear-gradient(135deg, #0284c7, #06b6d4); }
+.badge-hr { background: linear-gradient(135deg, #db2777, #f43f5e); }
+.badge-marketing { background: linear-gradient(135deg, #ea580c, #f97316); }
+.badge-sales { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.badge-service { background: linear-gradient(135deg, #4f46e5, #6366f1); }
+.badge-retail { background: linear-gradient(135deg, #7c3aed, #8b5cf6); }
+.badge-finance { background: linear-gradient(135deg, #059669, #34d399); }
+.badge-legal { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.badge-enterprise { background: linear-gradient(135deg, #475569, #64748b); }
+
+.case-date-source {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.case-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--text-title);
+  margin-bottom: 0.75rem;
+}
+
+.case-summary {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+.case-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f1f5f9;
+  margin-top: auto;
+}
+
+.read-detail-btn {
+  background: var(--dark-btn);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.read-detail-btn:hover {
+  background: var(--dark-btn-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.25);
+}
+
+/* Modal Overlay & Detail View */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 780px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-modal);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  padding: 1.75rem 2rem 1.25rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-meta-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-title);
+  line-height: 1.4;
+  padding-right: 2.5rem;
+}
+
+.modal-tabs {
+  display: flex;
+  gap: 0.5rem;
+  background: #f8fafc;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow-x: auto;
+}
+
+.modal-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.modal-tab-btn.active {
+  background: var(--dark-btn);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(17, 24, 39, 0.2);
+}
+
+.modal-body {
+  padding: 2rem;
+  flex: 1;
+}
+
+.modal-panel {
+  display: none;
+}
+
+.modal-panel.active {
+  display: block;
+}
+
+.panel-section-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 0.85rem;
+}
+
+.panel-intro-text {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  background: #f8fafc;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-blue);
+  text-align: justify;
+}
+
+.panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panel-list li {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.panel-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.modal-footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: 4rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-sub {
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .hero-main-title { font-size: 1.6rem; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .modal-container { margin: 1rem; max-height: 85vh; }
+  .modal-header, .modal-body, .modal-footer { padding: 1.25rem; }
+}
+
+/* Executive Dashboard Section */
+.executive-dashboard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.dashboard-header {
+  margin-bottom: 1.75rem;
+}
+
+.dashboard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-badge-pill {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: #fbbf24;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.dashboard-title-group h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-title);
+  letter-spacing: -0.3px;
+}
+
+.dashboard-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Takeaways Grid - Horizontal Presentation */
+.takeaways-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.takeaway-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card, #e2e8f0);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.35rem 1.6rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.takeaway-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  border-radius: 4px 0 0 4px;
+}
+
+.takeaway-card.card-risk::before { background: linear-gradient(180deg, #ef4444, #f97316); }
+.takeaway-card.card-roi::before { background: linear-gradient(180deg, #10b981, #059669); }
+.takeaway-card.card-gov::before { background: linear-gradient(180deg, #3b82f6, #6366f1); }
+
+.takeaway-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.takeaway-card .card-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+.takeaway-card h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-title, #0f172a);
+  line-height: 1.4;
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 260px;
+}
+
+.takeaway-bullets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 0.85rem 1.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.takeaway-bullet-item {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-body, #334155);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.takeaway-bullet-item span:last-child {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .takeaway-bullets {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Dashboard Widgets */
+.dashboard-widgets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.widget-box {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+}
+
+.widget-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.keyword-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.kw-tag {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: var(--text-body);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.kw-tag:hover, .kw-tag.active {
+  background: var(--primary-blue-light);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-body);
+  cursor: pointer;
+  line-height: 1.45;
+  user-select: none;
+}
+
+.check-item .chk-box {
+  accent-color: var(--primary-blue);
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.check-item input:checked + span {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+  .takeaways-grid { grid-template-columns: 1fr; }
+  .dashboard-widgets { grid-template-columns: 1fr; }
+}
+
+/* ==================================================
+   Reader Feedback Section & Compact Floating Modal
+   ================================================== */
+.reader-feedback-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.feedback-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feedback-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.feedback-icon {
+  width: 38px;
+  height: 38px;
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.feedback-title-group h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.feedback-title-group p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.feedback-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.feedback-btn:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.feedback-btn.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.feedback-input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.feedback-input {
+  flex: 1;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: #f8fafc;
+}
+
+.feedback-input:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.feedback-submit-btn {
+  background: var(--dark-btn);
+  color: #ffffff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.feedback-submit-btn:hover {
+  background: var(--dark-btn-hover);
+}
+
+/* Floating Trigger Pill */
+.floating-feedback-pill {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 99;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.35);
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.floating-feedback-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: #1e293b;
+  box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.5);
+}
+
+/* Compact Modal */
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.feedback-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.feedback-modal-box {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-modal);
+  position: relative;
+  transform: translateY(15px) scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feedback-modal-overlay.active .feedback-modal-box {
+  transform: translateY(0) scale(1);
+}
+
+.feedback-modal-close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.feedback-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+
+</style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <span class="brand-title">AI Trend Listening</span>
+      </a>
+      <div class="issue-badge">
+        Vol. 2026 Issue #1 │ 7月號創刊專題
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="container">
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <!-- Main Hero Banner -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <div class="theme-tag-pill">
+          <span class="sparkle-icon">✨</span>
+          AI趨勢周報
+        </div>
+        
+        <h1 class="hero-main-title">AI 驅動的策略決策：從數據洞察到風險預警</h1>
+        
+        <div class="hero-hashtags">
+          <span class="hashtag">#EnterpriseAI</span>
+          <span class="hashtag">#AITrends</span>
+          <span class="hashtag">#DigitalTransformation</span>
+          <span class="hashtag">#DeltaElectronics</span>
+        </div>
+
+        <div class="lead-in-card">
+          <div class="lead-in-card-header" style="margin-bottom: 1.25rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.85rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="margin: 0; font-size: 1.25rem; color: #0f172a; font-weight: 800;">📖 本期導讀 (Vol. 2026 Issue #1)</h3>
+            <div class="lead-in-header-badge" style="margin: 0;">💡 專題深度解讀｜從「分析工具」進化為「決策引擎」</div>
+          </div>
+
+          <div class="guide-sections-wrapper">
+            <!-- Section 1: Strategic Context -->
+            <div class="guide-section guide-section-trend">
+              <h4 class="guide-sub-title">🌐 趨勢洞察｜AI 從效率工具演變為企業決策夥伴</h4>
+              <p class="guide-text">
+                當 AI 從提升效率的工具，逐步演變為企業決策的重要夥伴，企業競爭的關鍵已不再只是「擁有多少數據」，而是能否將數據轉化為<strong>即時洞察</strong>，並在風險發生之前做出<strong>預判與應對</strong>。全球企業正從 AI 實驗階段邁向規模化應用階段，決策模式也從經驗驅動逐步轉向<strong>數據驅動與智慧決策</strong>。從供應鏈管理、資安防護到企業治理，AI 正重新定義企業看待機會與風險的方式。
+              </p>
+            </div>
+
+            <!-- Section 2: Case Highlights & Core Focus -->
+            <div class="guide-section guide-section-cases">
+              <h4 class="guide-sub-title">🚀 本期實務精解｜數據治理與風險預警的雙重基礎</h4>
+              <p class="guide-text">
+                本期電子報聚焦六個具代表性的實務案例，呈現 AI 如何協助企業從海量資訊中挖掘價值，並建立更具韌性的決策機制。<strong>Walmart</strong> 運用 AI 預測食品需求與浪費，優化供應鏈管理並兼顧永續目標；<strong>臺灣政府</strong>積極推動資料治理與 AI 治理框架，凸顯高品質數據已成為企業發展 AI 的核心基礎。另一方面，隨著 AI 能力快速提升，企業也面臨新的治理挑戰，從 AI 驅動的資安攻擊、關鍵系統漏洞，到 AI 使用過程中的資料安全與決策風險，都正在考驗企業的風險管理能力。這些案例共同反映一項重要趨勢：未來企業的競爭力，將建立在<span class="highlight-pill">「數據治理能力」</span>與<span class="highlight-pill">「風險預警能力」</span>的雙重基礎之上。
+              </p>
+            </div>
+
+            <!-- Section 3: Delta Electronics Strategic Focus -->
+            <div class="guide-section guide-section-delta">
+              <div class="delta-focus-badge">⚡ 台達戰略觀點｜Delta Strategic Perspective</div>
+              <p class="guide-text">
+                對<strong>台達</strong>而言，作為全球電源管理、智慧製造與能源轉型的重要推動者，AI 的價值不僅在於提升營運效率，更在於建立從<strong>市場洞察、供應鏈協同、生產管理到資安防護</strong>的全方位決策能力。在產業環境快速變化、地緣政治與資安威脅持續升溫的背景下，企業需要的不只是更多數據，而是能夠將數據轉化為行動、將風險轉化為預警的能力。當 AI 與決策流程深度融合，真正的競爭優勢將來自於<strong>更快看見趨勢、更早發現風險，以及更精準地配置資源</strong>。
+              </p>
+            </div>
+
+            <!-- Section 4: Vision & Case Exploration -->
+            <div class="guide-section guide-section-conclusion">
+              <h4 class="guide-sub-title">🎯 導覽總覽｜建立可信任、可治理且具韌性的智慧決策體系</h4>
+              <p class="guide-text">
+                本期精選案例將帶您從零售、政府治理、資安防護到企業風險管理等不同場景，一同觀察 AI 如何從<strong>「分析工具」進化為「決策引擎」</strong>，以及企業該如何在把握 AI 機遇的同時，建立<strong>可信任、可治理且具韌性</strong>的智慧決策體系。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Cases Section Header -->
+    <div class="section-header">
+      <h2>🎯 本期精選 6 大深度實務案例</h2>
+    </div>
+
+    <!-- Cases Grid -->
+    <section class="cases-grid" id="cases-grid">
+      <!-- Dynamically Populated by newsletter.js -->
+    </section>
+
+    <!-- Reader Feedback Section -->
+    <section class="reader-feedback-section">
+      <div class="feedback-card">
+        <div class="feedback-card-top">
+          <div class="feedback-header">
+            <div class="feedback-icon">💬</div>
+            <div class="feedback-title-group">
+              <h3>本期電子報讀者意見反饋</h3>
+              <p>您的實務意見是我們持續優化專題選題與內容品質的核心動力</p>
+            </div>
+          </div>
+          <div class="feedback-actions">
+            <button class="feedback-btn" data-rating="5">💡 獲益良多 (5★)</button>
+            <button class="feedback-btn" data-rating="4">👍 內容紮實 (4★)</button>
+            <button class="feedback-btn" data-rating="3">📝 仍需優化 (3★)</button>
+          </div>
+        </div>
+
+        <div class="feedback-input-group">
+          <input type="text" class="feedback-input" id="feedback-input-text" placeholder="寫下您對本期選題或內容的建議（選填）...">
+          <button class="feedback-submit-btn" id="feedback-submit-btn">送出反饋</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+                                                                                  <!-- Footer -->
+  <footer class="footer">
+    <p>AI Trend Listening 科技與產業趨勢周報 &copy; 2026 | 專為高層決策者與團隊打造的企業 AI 情報</p>
+    <p class="footer-sub">資訊來源包括權威產業媒體、研究機構與新聞數據庫；內容經由主管評選與綜合編撰，精選新聞歸屬原創作者所有。</p>
+  </footer>
+
+  <!-- Floating Feedback Trigger Pill -->
+  <div class="floating-feedback-pill" id="floating-feedback-btn">
+    <span class="fb-icon">💬</span>
+    <span>意見反饋</span>
+  </div>
+
+  <!-- Compact Feedback Modal Overlay -->
+  <div class="feedback-modal-overlay" id="feedback-modal">
+    <div class="feedback-modal-box">
+      <button class="feedback-modal-close" id="feedback-modal-close">✕</button>
+      <div class="feedback-header" style="margin-bottom: 1rem;">
+        <div class="feedback-icon">⚡</div>
+        <div class="feedback-title-group">
+          <h3>讀者快速意見反饋</h3>
+          <p>請給予本期內容簡單評分或建議</p>
+        </div>
+      </div>
+      
+      <div class="feedback-actions" style="margin-bottom: 1rem; justify-content: center;">
+        <button class="feedback-btn" data-rating="5">💡 非常有幫助</button>
+        <button class="feedback-btn" data-rating="4">👍 還不錯</button>
+        <button class="feedback-btn" data-rating="3">📝 提出建議</button>
+      </div>
+
+      <div class="feedback-input-group" style="flex-direction: column;">
+        <input type="text" class="feedback-input" id="modal-feedback-text" placeholder="可在此填寫具體建議..." style="width: 100%;">
+        <button class="feedback-submit-btn" id="modal-feedback-submit" style="width: 100%; margin-top: 0.5rem;">確認送出</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="newsletter.js"></script>
+<script>
+const EMBEDDED_CASES = [
+  {
+    "id": 1,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "前瞻 AI 演算法與系統整合",
+    "badge_class": "badge-manufacturing",
+    "title": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳",
+    "pub_date": "2026-07-30 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177760",
+    "cover_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    "summary": "Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。 生成式AI快速發展後，企業開始重新思考AI的價值。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177760\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。\n  • 對零售業而言，食品浪費一直是永續管理的重要挑戰。生鮮商品具有保存期限短、需求波動大的特性，若補貨與銷售預測不精準，容易造成商品過期報廢。\n\n🔍 二、關鍵技術與架構細節\n  • 生成式AI快速發展後，企業開始重新思考AI的價值。對全球最大零售商Walmart而言，AI不只是提升銷售推薦或員工效率的工具，也逐漸成為改善零售流程、降低資源浪費的重要技術。在Walmart最新的FY2026永續報告書，Walmart揭露他們如何利用AI、資料分析、自動化與數位平臺，將永續目標融入日常營運，從食品管理、供應鏈減碳到AI治理，建立以數據驅動的永續零售模式。\n  • Walmart並非單純以AI解決所有永續問題，而是依照不同場景導入不同數位能力。其中，AI主要用於提升食品管理與營運決策效率，而供應鏈減碳則依靠數據平臺與碳管理工具，協助供應商共同降低排放。\n  • Walmart在報告書中指出，他們正利用人工智慧（AI）、機器學習與進階分析等技術，改善食品生命周期管理。透過分析歷史銷售資料、庫存狀態、季節因素與消費趨勢，AI模型協助門市更精準預測需求，調整補貨策略。\n  • 此外，Walmart也運用影像辨識與感測資料，協助判斷生鮮商品品質與保存狀態，讓門市能更早發現可能浪費的商品，提前採取降價促銷、優先銷售或食品捐贈等措施。\n\n💡 三、戰略佈局與產業影響\n  • 這些數位工具協助Walmart改善食品管理流程。在報告期間，Walmart全球食品捐贈量已超過9億磅。\n  • 除了利用AI分析資料與預測需求，Walmart也將生成式AI導入員工工作流程，讓AI從幕後分析工具，進一步成為員工日常工作的智慧助手。\n  • 生成式AI可協助員工透過自然語言方式取得企業資訊、查詢工作流程與獲得營運建議，降低過去需要人工搜尋與整理資訊的時間。相較於傳統AI用於分析歷史資料、預測未來趨勢，生成式AI則讓員工能直接與企業知識互動，將AI能力延伸至更多零售場景。\n  • 生成式AI的價值在於提升員工生產力與決策效率，讓第一線人員能更快速取得所需資訊。\n  • 隨著AI逐漸進入商品管理、員工服務與營運決策等核心流程，AI帶來的風險也成為企業永續經營面臨的新挑戰。\n  • 因此Walmart提出內部Responsible AI的治理架構，以確保AI在企業內部能被安全且負責任地使用，同時也是建立數位信任(Digital Trust) 的基礎。",
+    "key_metric": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺... │ iThome 科技報",
+    "rationale": "對應領域：策略決策、數據洞察、驅動的策略決策。 切入點：【策略決策、數據洞察、驅動的策略決策 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、數據洞察、驅動的策略決策】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、數據洞察、驅動的策略決策】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。 生成式AI快速發展後，企業開始重新思考AI的價值。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：前瞻 AI 演算法與系統整合。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：前瞻 AI 演算法與系統整合",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：策略決策、數據洞察、驅動的策略決策。 切入點：【策略決策、數據洞察、驅動的策略決策 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、數據洞察、驅動的策略決策】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、數據洞察、驅動的策略決策】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "AI 愈聰明，企業愈危險？日本資安政策全面升級",
+    "pub_date": "2026-08-02 23:50",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://finance.technews.tw/2026/08/03/japan-revises-ai-policy-guidelines-to-bolster-cybersecurity/",
+    "cover_image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80",
+    "summary": "高階AI模型出現，大幅降低駭客發動精密攻擊的門檻。 過去駭客尋找企業系統漏洞需要耗費數週的時間，現在用訓練有素的AI模型。",
+    "full_digest": "📖 閱讀筆記與精華摘要：AI 愈聰明，企業愈危險？日本資安政策全面升級\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-08-02 23:50\n🔗 原文網址：https://finance.technews.tw/2026/08/03/japan-revises-ai-policy-guidelines-to-bolster-cybersecurity/\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 高階AI模型出現，大幅降低駭客發動精密攻擊的門檻。過去駭客尋找企業系統漏洞需要耗費數週的時間，現在用訓練有素的AI模型，幾分鐘內就自動化分析程式碼、找出零日漏洞並產生攻擊腳本。AI還能根據特定企業的溝通習慣，量身打造極具說服力的社群工程信與假訊息。這種高效率、低成本且自動化的攻擊模式，讓企業過去投資的傳統資安防線面臨失效風險。\n\n🔍 二、關鍵技術與架構細節\n  • 為了因應這項威脅，日本政府宣佈大幅提升日本AI安全研究所（AISI）編制，並計畫對高性能AI模型建立上市前的漏洞評估與審查機制。這代表未來企業在引進或開發AI系統時，將面臨更嚴格的合規監管與法律責任。\n  • 筆者觀察，日本這次AI政策修訂，提醒企業管理層的戰略風險：技術依賴度與供應鏈韌性。新修訂的指南特別強調，必須避免AI技術過度依賴特定國家或單一外國企業。日本政府正積極推動國產AI模型的研發，重點布局在控制機器人的實體AI（Physical AI）以及針對特定垂直產業的專用型AI（Vertical AI）。\n  • 面對政府政策的轉向與外部威脅的升級，管理層在推動數位轉型時，必須將「安全管理」確立為AI專案過關的前提條件。筆者建議，管理階層應從三個層面建立企業的防禦體系：\n  • 第二，重塑人機分工與防呆機制。日本政府政策指南特別提醒，過度依賴AI可能導致組織專業能力的退化與監督盲點。涉及高額資金調度、關鍵業務決策與核心系統存取的環節，企業必須堅持最終由人決策（Human-in-the-loop）的原則，確保即使AI模型出現錯誤或遭到惡意干擾時，管理團隊依然擁有及時接管與控制損害的能力。\n\n📊 三、營運數據與效益指標\n  • 這對企業決策者是明確警訊。如果公司核心業務營運、客戶資料分析或供應鏈排程，完全建立在外國的封閉式AI模型上，一旦遇到重大資安事件、出現合法爭議或因為地緣政治因素中斷服務，企業一夕之間就會陷入癱瘓。評估AI供應商的風險與資料主權，已經成為董事會必須承擔的管理責任。\n  • 第一，建立嚴格的AI資料管理規範。管理層必須明確規範員工使用AI工具的界線，防止員工將未公開的商業機密、產品原始碼或客戶個資上傳至未經安全認證的公有雲AI工具。外購的AI系統，必須要求供應商提供透明漏洞檢測報告與合法證明。\n  • AI快速演進正在重新定義企業的營運規則。當日本政府率先將資安升級為AI發展的核心政策時，也代表著盲目追逐技術效能的時代已經結束。對於企業執行長與管理團隊而言，AI越聰明，企業的風險管理就必須越縝密。將資安韌性與合規治理融入企業的經營基因，是企業在充滿不確定性的市場，保障商譽、保護資產並贏得客戶信任的根本基礎。\n\n💡 四、戰略佈局與產業影響\n  • 第三，將AI資安納入企業營運持續計畫。企業資訊長需要將「AI系統遭威脅癱瘓」設定為常態性的演練情境。當公司依賴的AI模型或雲端服務被迫暫停時，營運部門必須具備預備的替代流程，確保核心業務不會因為技術故障而完全停擺。",
+    "key_metric": "AI 愈聰明，企業愈危險？日本資安政策全面升級... │ 科技新報 TechNews",
+    "rationale": "對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『AI 愈聰明，企業愈危險？日本資安政策全面升級』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，高階AI模型出現，大幅降低駭客發動精密攻擊的門檻。 過去駭客尋找企業系統漏洞需要耗費數週的時間，現在用訓練有素的AI模型。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『AI 愈聰明，企業愈危險？日本資安政策全面升級』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行動指引",
+    "pub_date": "2026-08-04 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177845",
+    "cover_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "summary": "7月31日數位發展部資通安全署發布新聞稿指出，為了協助中小企業在面臨資安危機當下，迅速採取適當措施，降低資安攻擊損害並儘速恢復正常營運，他們發布了資安事件應變處理行動指引。 上週資安署針對中小企業發布資安事件應變處理行動指引，針對六種常見的資安威脅，提供具體察覺問題的方式。",
+    "full_digest": "📖 閱讀筆記與精華摘要：為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行動指引\n📰 來源：iThome 科技報 | 📅 發布日期：2026-08-04 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177845\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 上週資安署針對中小企業發布資安事件應變處理行動指引，針對六種常見的資安威脅，提供具體察覺問題的方式，以及採取行動的步驟\n  • 這份指引也將資安事件應變程序區分為四大階層，從事前的準備階段，到事件發生當下的偵測與應變處理、通報與對外溝通，以及事件後續的復原與持續改善。資安署也在指引裡向經營決策階層喊話，強調公司的資安治理必須由管理階層負責，而且資安事件應變計畫須由管理階層審查與核可，以免事發後因跨部門調度失靈，而失去作用。\n\n🔍 二、關鍵技術與架構細節\n  • 7月31日數位發展部資通安全署發布新聞稿指出，為了協助中小企業在面臨資安危機當下，迅速採取適當措施，降低資安攻擊損害並儘速恢復正常營運，他們發布了資安事件應變處理行動指引，將資安事故的處理流程規畫為四大階段，並針對中小企業最常面臨的六大威脅提供處理步驟，涵蓋設備受感染異常、帳號被盜、網路釣魚、商業支付詐欺、勒索軟體攻擊，以及阻斷服務攻擊（DDoS）等，並附具體可操作的「應變處理檢核清單」、「應變里程碑建議時限」及「聲明稿範本」，協助企業在壓力環境下有條不紊地處理資安事件。",
+    "key_metric": "為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行動指... │ iThome 科技報",
+    "rationale": "對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，7月31日數位發展部資通安全署發布新聞稿指出，為了協助中小企業在面臨資安危機當下，迅速採取適當措施，降低資安攻擊損害並儘速恢復正常營運，他們發布了資安事件應變處理行動指引。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI發展",
+    "pub_date": "2026-07-31 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177796",
+    "cover_image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    "summary": "行政院今年6月召開首次的「國家人工智慧戰略特別委員會」會議，將算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適列為我國發展AI的重要基礎。 行政院副院長鄭麗君在「總統盃黑客松」徵件啟動活動中揭露我國的資料治理策略，她表示，資料是推動創新、催生產業與發展主權AI的重要基礎，政府正推動資料治理制度。",
+    "full_digest": "📖 閱讀筆記與精華摘要：鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI發展\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-31 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177796\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 行政院今年6月召開首次的「國家人工智慧戰略特別委員會」會議，將算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適列為我國發展AI的重要基礎。\n  • 她表示，總統盃黑客松自2018年舉辦以來，已成為政府運用開放資料、公私協力推動創新的重要平台。過去黑客松模式主要是政府提出公共議題與需求，開放資料資源，由民間團隊提出創新解決方案；今年主題為「智慧農業、安全永續」，鼓勵參賽團隊運用人工智慧與資料數據，解決農業治理與永續發展問題。\n\n🔍 二、關鍵技術與架構細節\n  • 行政院副院長鄭麗君在「總統盃黑客松」徵件啟動活動中揭露我國的資料治理策略，她表示，資料是推動創新、催生產業與發展主權AI的重要基礎，政府正推動資料治理制度，促進資料開放與流通，支撐臺灣主權AI應用發展。\n  • 行政院長卓榮泰今年6月召開首次「國家人工智慧戰略特別委員會」會議時，已將資料治理列為我國發展主權AI所需的重要新基礎建設之一。政府盤點主權AI發展所需基礎，包括算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適等等。\n  • 顯示政府推動AI不僅著重模型與運算能力，也將資料治理視為支撐AI發展的重要環節。\n  • 在資料治理方面，鄭麗君表示，為兼顧資料創新、個資保護、著作權保護原則，行政院已持續研議「促進資料創新利用發展條例」立法，希望能夠促進4項資料流通機制，包括政府資料開放、政府資料共享、產業資料共享、非營利公益導向的資料利他機制。目的是經由建構資料開放及流通的治理框架，透過資料創新促進AI應用發展，開拓臺灣實踐主權AI的路徑。\n\n💡 三、戰略佈局與產業影響\n  • 為落實主權AI及資料治理政策，她也透露行政院已在「智慧國家2.0推動小組」下成立「主權AI及資料治理」專案會議，並要求各部會副首長擔任資料長，共同組成「資料長聯盟」。\n  • 未來各部會的資料長，負責推動盤點掌握的資料，推動政府資料開放、政府資料共享，以及AI訓練語料盤點與整備。\n  • 鄭麗君表示，各部會將優先從不涉及個資的項目著手，提升資料品質，使其成為「AI-Ready Data」，優先釋出有臺灣在地價值內涵的高品質語料，協助AI訓練。\n  • 今年總統盃黑客松由農業部承辦，並與數位發展部共同推動，以「智慧農業、安全永續」為主題，邀請團隊運用AI與資料數據，在智慧治理、安心社會及永續轉型三大方向提出解決方案。\n  • 從黑客松的主題轉變可看出政府轉型及資料政策的新方向。過去政府透過開放資料，讓民間取得政府的公共資料並發展創新服務，透過黑客松競賽來引導公私協力的發展；現在則隨著生成式AI快速發展，政府重視資料品質與AI可用性，透過適合AI應用的資料資源，促進AI解決公共問題。",
+    "key_metric": "鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI發展... │ iThome 科技報",
+    "rationale": "對應領域：策略決策、風險預警、驅動的策略決策。 切入點：【策略決策、風險預警、驅動的策略決策 視角】聚焦『鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警、驅動的策略決策】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警、驅動的策略決策】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，行政院今年6月召開首次的「國家人工智慧戰略特別委員會」會議，將算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適列為我國發展AI的重要基礎。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：策略決策、風險預警、驅動的策略決策。 切入點：【策略決策、風險預警、驅動的策略決策 視角】聚焦『鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警、驅動的策略決策】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警、驅動的策略決策】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "前瞻 AI 演算法與系統整合",
+    "badge_class": "badge-manufacturing",
+    "title": "Azure 年營收首度突破千億美元，微軟 AI 業務再寫新里程碑",
+    "pub_date": "2026-07-29 23:44",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://finance.technews.tw/2026/07/30/azure-revenue-100-billion-microsoft-ai-milestone/",
+    "cover_image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    "summary": "今年 Azure 年營收首度突破 1,000 億美元，成為微軟雲端業務的重要里程碑。 微軟董事長暨執行長 Satya Nadella 表示，公司持續推進 AI 成本與成果（cost-to-outcome）曲線。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Azure 年營收首度突破千億美元，微軟 AI 業務再寫新里程碑\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-07-29 23:44\n🔗 原文網址：https://finance.technews.tw/2026/07/30/azure-revenue-100-billion-microsoft-ai-milestone/\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 微軟董事長暨執行長 Satya Nadella 表示，公司持續推進 AI 成本與成果（cost-to-outcome）曲線，讓企業能將 Token 轉化為實際商業價值。今年 Azure 年營收首度突破 1,000 億美元，成為微軟雲端業務的重要里程碑；此外，Microsoft 365 Copilot 付費席次也突破 3,000 萬個，反映企業持續加速導入 AI 應用。\n\n📊 二、營運數據與效益指標\n  • 微軟表示，第四季 Microsoft Cloud 營收達 593 億美元，年增 27%；其中，Intelligent Cloud 部門營收達 393 億美元，年增 32%，Azure 及其他雲端服務營收則年增 43%，持續成為微軟成長的主要動能。\n  • 隨著 AI 模型從訓練逐步延伸至推論及 AI Agent 應用，微軟也持續加大 AI 基礎建設投資。第四季資本支出（CapEx）達 410 億美元，年增 70%，雖略低於市場預估的 420 億美元，但仍維持歷史高檔。微軟財務長 Amy Hood 表示，公司已重新評估資料中心及辦公大樓的使用壽命，預計可再延長 10 年，因此未來部分原本列為資本支出的投資將改列營運成本（OpEx），以優化資產運用效率。",
+    "key_metric": "Azure 年營收首度突破千億美元，微軟 AI 業務再寫新里程碑... │ 科技新報 TechNews",
+    "rationale": "對應領域：策略決策、風險預警。 切入點：【策略決策、風險預警 視角】聚焦『Azure 年營收首度突破千億美元，微軟 AI 業務再寫新里...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，今年 Azure 年營收首度突破 1,000 億美元，成為微軟雲端業務的重要里程碑。 微軟董事長暨執行長 Satya Nadella 表示，公司持續推進 AI 成本與成果（cost-to-outcome）曲線。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：前瞻 AI 演算法與系統整合。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：前瞻 AI 演算法與系統整合",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：策略決策、風險預警。 切入點：【策略決策、風險預警 視角】聚焦『Azure 年營收首度突破千億美元，微軟 AI 業務再寫新里...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經身分驗證的攻擊者可藉此取得完整存取權限",
+    "pub_date": "2026-07-27 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177667",
+    "cover_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "summary": "西門子近日發布資安公告，修補Opcenter X的重大漏洞CVE-2026-56451，CVSS v3.1與v4.0嚴重性評分均達10.0分，可能嚴重影響企業的生產管理。 西門子用於整合企業工廠製造流程與生產營運管理的Opcenter X平臺。",
+    "full_digest": "📖 閱讀筆記與精華摘要：西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經身分驗證的攻擊者可藉此取得完整存取權限\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-27 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177667\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • Opcenter X製造管理平臺被發現存在繞過身分驗證機制問題，攻擊者可偽造權杖冒充管理者，進而獲得系統完整存取權限，用戶需立即修補\n\n🔍 二、關鍵技術與架構細節\n  • 西門子用於整合企業工廠製造流程與生產營運管理的Opcenter X平臺，被發現存在可能讓攻擊者取得完整系統存取權限的重大漏洞。西門子近日發布資安公告，修補Opcenter X的重大漏洞CVE-2026-56451，CVSS v3.1與v4.0嚴重性評分均達10.0分，可能嚴重影響企業的生產管理，用戶須立即升級至已完成修補的V2604以上版本。\n  • CVE-2026-56451的問題源自Opcenter X無法正確驗證用戶身分驗證流程中，JWT權杖（JSON Web Token）標頭指定的演算法，未經身分驗證的遠端攻擊者可藉此偽造任意JWT權杖，繞過身分驗證機制，冒充包括管理員在內的任何使用者，進而取得完整系統存取權限。",
+    "key_metric": "西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經身分... │ iThome 科技報",
+    "rationale": "對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，西門子近日發布資安公告，修補Opcenter X的重大漏洞CVE-2026-56451，CVSS v3.1與v4.0嚴重性評分均達10.0分，可能嚴重影響企業的生產管理。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const casesData = (typeof EMBEDDED_CASES !== 'undefined' && EMBEDDED_CASES.length > 0) ? EMBEDDED_CASES : [];
+  const gridContainer = document.getElementById('cases-grid');
+
+  function renderCases(cases) {
+    if (!gridContainer) return;
+    gridContainer.innerHTML = '';
+
+    cases.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'case-card';
+      card.innerHTML = `
+        <div class="case-card-content">
+          <div class="case-top-meta">
+            <span class="case-date-source">📅 ${c.pub_date} │ 📰 ${c.source}</span>
+          </div>
+
+          <h3 class="case-title">${c.title}</h3>
+          <p class="case-summary">${c.summary}</p>
+
+          <div class="case-actions">
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="read-detail-btn">
+              閱讀全文 ↗
+            </a>
+          </div>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderCases(casesData);
+
+  // Keyword Radar Tag Click Handler
+  const kwTags = document.querySelectorAll('.kw-tag');
+  kwTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      kwTags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      const filterKw = tag.getAttribute('data-kw');
+      if (!filterKw || filterKw === 'all') {
+        renderCases(casesData);
+      } else {
+        const filtered = casesData.filter(c => {
+          const fullText = (c.title + ' ' + c.summary + ' ' + c.full_digest + ' ' + c.rationale).toLowerCase();
+          return fullText.includes(filterKw.toLowerCase());
+        });
+        renderCases(filtered.length > 0 ? filtered : casesData);
+      }
+    });
+  });
+
+  // Checklist Interactive State
+  const checkBoxes = document.querySelectorAll('.chk-box');
+  checkBoxes.forEach((box, idx) => {
+    const savedState = localStorage.getItem(`newsletter_chk_${idx}`);
+    if (savedState === 'true') {
+      box.checked = true;
+    }
+    box.addEventListener('change', () => {
+      localStorage.setItem(`newsletter_chk_${idx}`, box.checked);
+    });
+  });
+
+  // Reader Feedback & Floating Modal Interactions
+  const floatingBtn = document.getElementById('floating-feedback-btn');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const modalClose = document.getElementById('feedback-modal-close');
+
+  if (floatingBtn && feedbackModal) {
+    floatingBtn.addEventListener('click', () => {
+      feedbackModal.classList.add('active');
+    });
+  }
+
+  if (modalClose && feedbackModal) {
+    modalClose.addEventListener('click', () => {
+      feedbackModal.classList.remove('active');
+    });
+  }
+
+  if (feedbackModal) {
+    feedbackModal.addEventListener('click', (e) => {
+      if (e.target === feedbackModal) {
+        feedbackModal.classList.remove('active');
+      }
+    });
+  }
+
+  const allFeedbackBtns = document.querySelectorAll('.feedback-btn');
+  let selectedRating = null;
+
+  allFeedbackBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      allFeedbackBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRating = btn.getAttribute('data-rating');
+    });
+  });
+
+  function handleFeedbackSubmit(inputEl, submitBtn, modalToClose) {
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', () => {
+      const comment = inputEl ? inputEl.value.trim() : '';
+      if (!selectedRating && !comment) {
+        alert('請先點選滿意度評分或填寫意見建議，謝謝！');
+        return;
+      }
+
+      const feedbackData = {
+        rating: selectedRating || '5',
+        comment: comment,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('reader_feedback_submitted', JSON.stringify(feedbackData));
+      } catch(e) {}
+
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = '✅ 反饋成功！';
+      submitBtn.style.background = '#166534';
+
+      if (inputEl) inputEl.value = '';
+
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.background = '';
+        if (modalToClose) {
+          modalToClose.classList.remove('active');
+        }
+      }, 1800);
+    });
+  }
+
+  const inlineSubmit = document.getElementById('feedback-submit-btn');
+  const inlineInput = document.getElementById('feedback-input-text');
+  handleFeedbackSubmit(inlineInput, inlineSubmit, null);
+
+  const modalSubmit = document.getElementById('modal-feedback-submit');
+  const modalInput = document.getElementById('modal-feedback-text');
+  handleFeedbackSubmit(modalInput, modalSubmit, feedbackModal);
+});
+
+
+
+</script>
+</body>
+</html>

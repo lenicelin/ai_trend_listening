@@ -1,0 +1,378 @@
+const EMBEDDED_CASES = [
+  {
+    "id": 1,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳",
+    "pub_date": "2026-07-30 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177760",
+    "cover_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    "summary": "Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。生成式AI快速發展後，企業開始重新思考AI的價值，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177760\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。\n  • 對零售業而言，食品浪費一直是永續管理的重要挑戰。生鮮商品具有保存期限短、需求波動大的特性，若補貨與銷售預測不精準，容易造成商品過期報廢。\n\n🔍 二、關鍵技術與架構細節\n  • 生成式AI快速發展後，企業開始重新思考AI的價值。對全球最大零售商Walmart而言，AI不只是提升銷售推薦或員工效率的工具，也逐漸成為改善零售流程、降低資源浪費的重要技術。在Walmart最新的FY2026永續報告書，Walmart揭露他們如何利用AI、資料分析、自動化與數位平臺，將永續目標融入日常營運，從食品管理、供應鏈減碳到AI治理，建立以數據驅動的永續零售模式。\n  • Walmart並非單純以AI解決所有永續問題，而是依照不同場景導入不同數位能力。其中，AI主要用於提升食品管理與營運決策效率，而供應鏈減碳則依靠數據平臺與碳管理工具，協助供應商共同降低排放。\n  • Walmart在報告書中指出，他們正利用人工智慧（AI）、機器學習與進階分析等技術，改善食品生命周期管理。透過分析歷史銷售資料、庫存狀態、季節因素與消費趨勢，AI模型協助門市更精準預測需求，調整補貨策略。\n  • 此外，Walmart也運用影像辨識與感測資料，協助判斷生鮮商品品質與保存狀態，讓門市能更早發現可能浪費的商品，提前採取降價促銷、優先銷售或食品捐贈等措施。\n\n💡 三、戰略佈局與產業影響\n  • 這些數位工具協助Walmart改善食品管理流程。在報告期間，Walmart全球食品捐贈量已超過9億磅。\n  • 除了利用AI分析資料與預測需求，Walmart也將生成式AI導入員工工作流程，讓AI從幕後分析工具，進一步成為員工日常工作的智慧助手。\n  • 生成式AI可協助員工透過自然語言方式取得企業資訊、查詢工作流程與獲得營運建議，降低過去需要人工搜尋與整理資訊的時間。相較於傳統AI用於分析歷史資料、預測未來趨勢，生成式AI則讓員工能直接與企業知識互動，將AI能力延伸至更多零售場景。\n  • 生成式AI的價值在於提升員工生產力與決策效率，讓第一線人員能更快速取得所需資訊。\n  • 隨著AI逐漸進入商品管理、員工服務與營運決策等核心流程，AI帶來的風險也成為企業永續經營面臨的新挑戰。\n  • 因此Walmart提出內部Responsible AI的治理架構，以確保AI在企業內部能被安全且負責任地使用，同時也是建立數位信任(Digital Trust) 的基礎。",
+    "key_metric": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺... │ iThome 科技報",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協作」才是真正的競爭力",
+    "pub_date": "2026-07-29 23:50",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://finance.technews.tw/2026/07/30/survey-shows-more-than-half-of-companies-regret-laying-off-employees-due-to-ai/",
+    "cover_image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    "summary": "許多企業導入AI時，誤以為演算法能完美接管既有工作，卻忽略現有AI輸出依然有不穩定與缺乏洞察的局限。當企業倉促裁撤資深員工與主管，剩下的團隊往往因缺乏產業經驗與核心決策者，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協作」才是真正的競爭力\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-07-29 23:50\n🔗 原文網址：https://finance.technews.tw/2026/07/30/survey-shows-more-than-half-of-companies-regret-laying-off-employees-due-to-ai/\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • 許多企業導入AI時，誤以為演算法能完美接管既有工作，卻忽略現有AI輸出依然有不穩定與缺乏洞察的局限。當企業倉促裁撤資深員工與主管，剩下的團隊往往因缺乏產業經驗與核心決策者，無法精準評估AI產出品質；AI輸出的不一致性與錯誤，迫使企業必須花費雙倍時間以人工二次覆核與除錯，反而導致冗務激增與生產力倒退。福特汽車發現自動化系統無法解決複雜的品質瑕疵，IBM則發現AI無法獨立處理複雜的HR人際需求，這都證明AI只是強大的增幅器，運算基礎必須建立在人類資深專業知識與經驗上，缺乏專業人才，再昂貴的AI工具也只是快速生產低品質的決策垃圾。\n\n🔍 二、關鍵技術與架構細節\n  • 人工智慧的終極使命，是將人類從重複性的機械勞動解放，執行更具創造力與影響力的任務。對所有企業決策者而言，將資金與資源投注於員工的AI技能提升與人機協作生態系建立，才是確保企業在數位浪潮保有一流競爭力、實現永續發展的唯一定律。\n\n📊 三、營運數據與效益指標\n  • 當企業意識到科技無法憑空創造經驗，市場競爭的主軸就從「誰擁有一流的AI工具」轉向「誰能建立人機協作（Human-Machine Collaboration）體系」。研究顯示，雖然企業領導者對AI取代人力的恐懼從2024年54%降至2026年48%，但高達80%領導者計畫進行員工AI再培訓（Reskilling），並有51%企業導入AI使用規範與策略。企業開始理解，解決全球人才荒的最佳方式不是開除員工，而是再培訓與增加教育訓練（L&D）預算，協助現有員工掌握與AI協同工作的技能。如此能降低員工因恐懼AI而離職的風險，更能激發組織內部的創新活力，讓人才專注高價值的策略判斷與情感溝通。\n  • 下一波企業競爭的勝負分水嶺，在組織是否具備調配人機協作生態系的軟實力。研究指出，至今仍有38%企業領導者坦言並不了解AI對業務發揮作用的真正路徑，而27%企業缺乏清晰的AI轉型藍圖。盲目跟風導入AI與粗暴裁員，只會造成企業內部經驗斷層、生產力下滑與人才流失的巨大隱形損失；相反地，懂得將人類的戰略直覺、批判性思考與AI的極速運算能力深度融合的組織，才能轉成真正的商業價值。未來最具競爭力的企業，必定是那些懂得重塑工作流程、建立清晰合規政策，並讓員工在AI工具的加持下放放大自我價值的企業。",
+    "key_metric": "AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協作」... │ 科技新報 TechNews",
+    "rationale": "對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，許多企業導入AI時，誤以為演算法能完美接管既有工作，卻忽略現有AI輸出依然有不穩定與缺乏洞察的局限。當企業倉促裁撤資深員工與主管，剩下的團隊往往因缺乏產業經驗與核心決策者，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『AI 不是來取代員工，而是放大人才！全球企業重新發現「人機協...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模型與代理式平台",
+    "pub_date": "2026-07-28 23:20",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://infosecu.technews.tw/2026/07/29/microsoft-touts-cost-saving-ai-model-for-cybersecurity/",
+    "cover_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "summary": "為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。OpenAI 上週表示，在一項測試中，其模型成功利用一項安全漏洞，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模型與代理式平台\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-07-28 23:20\n🔗 原文網址：https://infosecu.technews.tw/2026/07/29/microsoft-touts-cost-saving-ai-model-for-cybersecurity/\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • OpenAI 上週表示，在一項測試中，其模型成功利用一項安全漏洞，並對 AI 新創公司 Hugging Face 的基礎設施發動攻擊。Hugging Face 使用中國 AI 新創「智譜」（Z.ai）的模型進行數位鑑識分析。這起事件突顯出，當前惡意攻擊者能透過生成式 AI 模型方便快速地對特定目標發動漏洞攻擊。\n\n🔍 二、關鍵技術與架構細節\n  • 為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。雖然 Google 上週二（7/21）才推出自家 AI 網安模型 Gemini 3.5 Flash Cyber，但比起在此之前毫無動作的微軟也快了一週的時間。\n  • 如今微軟也嘗試追上競爭者的腳步，推出全新 MAI-Cyber-1-Flash 模型與 Project Perception，後者是一套用於發現並修補網路安全弱點的 AI 代理集。\n\n📊 三、營運數據與效益指標\n  • 由於投資人對微軟長久以來高度仰賴 OpenAI 的看法從正面轉向至負面，甚至視之為一項風險。致使微軟今年股價已下跌 19%。為了挽回投資者的信心，今年，微軟已宣布推出可在 GitHub Copilot 工具中生成程式碼的自家模型；近期也開始在 Excel 試算表程式中採用第一方模型。\n  • 根據在 CyberGym AI 網安基準測試中的實測結果，搭載微軟 MAI-Cyber-1-Flash 模型 + OpenAI 通用型 GPT-5.4 的 MDASH（微軟既有多模漏洞管理 AI 代理系統），其整體漏洞評估分析表現達到95.95%，遠勝 Anthropic Mythos 5（83.3%）、Google 3.5 Flash Cyber（83.2%），以及 OpenAI GPT-5.5 Cyber（85.6%）。\n  • Gallot 在官方部落格文章中表示，搭載微軟全新 MAI-Cyber-1-Flash 模型的 MDASH，與目前微軟在 MDASH 中所採用的最佳模型配置相比，可節省近 50% 的成本。他並透露，該 AI 偵測模型會整合至 Project Perception 中。Project Perception 在取得授權後，可建議並實作程式碼修改，也能與非微軟的產品整合。\n  • 微軟 AI 執行長 Mustafa Suleyman 在某次受訪中表示，微軟擁有一套獨特的資料集，而微軟目前使用的資料，還不到其中的 1%。這突顯出微新 MAI-Cyber-1-Flash 模型仍有相當大的提升空間。",
+    "key_metric": "50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模型與... │ 科技新報 TechNews",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，為了反制這樣的狀況，Anthropic 與 OpenAI 早在今年 4、5 月之際就已推出可協助網安從業人員進行防禦工作的模型。OpenAI 上週表示，在一項測試中，其模型成功利用一項安全漏洞，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『50% 成本實現超越業界防護效能，微軟推出全新網安 AI 模...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "用 AI 把行銷素材規模化、效率提升3-5倍：Expedia 子品牌如何拿捏人機協作的邊界？ - TechOrange 科技報橘",
+    "pub_date": "2026-07-22 00:00",
+    "source": "TechOrange 科技報橘 (via Google News)",
+    "author": "TechOrange 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE44QkhNejBrOERQSFpZejBpcGx2OVVERHJCVU03WmdyVnVSSWlxbWtHZ1BweXBuNkdoUmRORFlUQm8wUVFzQVdVeWJTLTBNck40dldIeF91Wi0yblFfOFhHLTBSR002WFU5Tzc2SQ?oc=5",
+    "cover_image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    "summary": "Vrbo 一方面運用 AI 將全球行銷素材生產效率提升 3 至 5 倍，另一方面仍堅持所有涉及房源展示與品牌情感的內容必須由真人與真實場景完成。生成式 AI 正快速改變旅遊產業的行銷模式，但對 Expedia 集團旗下短租品牌 Vrbo 而言，AI 並非全面取代人力的工具，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：用 AI 把行銷素材規模化、效率提升3-5倍：Expedia 子品牌如何拿捏人機協作的邊界？ - TechOrange 科技報橘\n📰 來源：TechOrange 科技報橘 (via Google News) | 📅 發布日期：2026-07-22 00:00\n🔗 原文網址：https://techorange.com/2026/07/22/ai-expedia-vrbo-marketing/\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • 生成式 AI 正快速改變旅遊產業的行銷模式，但對 Expedia 集團旗下短租品牌 Vrbo 而言，AI 並非全面取代人力的工具，而是一套經過嚴格界定的效率引擎。\n  • ＊本文開放合作夥伴轉載，參考資料：《Adage》、《Short Term Rentalz》，首圖來源：Unsplash\n\n🔍 二、關鍵技術與架構細節\n  • Vrbo 一方面運用 AI 將全球行銷素材生產效率提升 3 至 5 倍，另一方面仍堅持所有涉及房源展示與品牌情感的內容必須由真人與真實場景完成，藉此守住品牌最重要的「品質與信任」價值。\n  • Helen Melluish 提到，目前團隊成員普遍認為，生成式 AI 已讓工作效率提升約 3 至 5 倍，許多原本需要花費數天完成的工作，如今只需一、兩個小時即可完成。她認為，AI 不應被視為取代行銷人的威脅，而是讓員工有更多時間投入策略思考與創意發展，尤其讓資淺行銷人才能更快參與高價值決策，而非長時間處理重複性的內容製作工作。\n  • 不過，Vrbo 也明確劃出 AI 的使用邊界。由於品牌核心價值建立在品質與信任之上，因此所有與消費者付費入住直接相關的房源照片與住宿畫面，Vrbo 堅持不以 AI 生成。Helen Melluish 強調，Vrbo 不會憑空創造不存在的 AI 房屋，也不會讓虛擬影像影響消費者的預期，以免破壞品牌長期累積的信任基礎。\n  • 在生成式 AI 快速滲透各行各業的同時，Vrbo 的做法展現出另一種發展方向。AI 被定位為提升效率、擴大規模與強化服務的工具，人類則持續掌握品牌信任、情感傳遞與關鍵決策。對這家旅遊科技公司而言，人機協作的價值並不在於全面自動化，而是在效率與真實之間建立清楚且可長期維持的界線。\n\n📊 三、營運數據與效益指標\n  • Helen Melluish 表示，目前生成式 AI 在這個過程中，最大的價值並非直接創作品牌核心內容，而是協助全球市場快速完成大量素材在地化。透過生成式 AI，團隊現在可以在極短時間內產出數千種不同版本的素材，因應各國市場需求。",
+    "key_metric": "用 AI 把行銷素材規模化、效率提升3-5倍：Expedia 子... │ TechOrange 科技報橘 (via Google News)",
+    "rationale": "對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『用 AI 把行銷素材規模化、效率提升3-5倍：Expedia...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 TechOrange 科技報橘 (via Google News) 報導，Vrbo 一方面運用 AI 將全球行銷素材生產效率提升 3 至 5 倍，另一方面仍堅持所有涉及房源展示與品牌情感的內容必須由真人與真實場景完成。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：人機協作、AI。 切入點：【人機協作、AI 視角】聚焦『用 AI 把行銷素材規模化、效率提升3-5倍：Expedia...』之技術落地與實務應用，解析如何透過 AI 技術實踐【人機協作、AI】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【人機協作、AI】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可執行主機命令",
+    "pub_date": "2026-07-31 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177769",
+    "cover_image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80",
+    "summary": "工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令。此案例提示企業應重新評估後續資安與防護策略，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可執行主機命令\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-31 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177769\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • 工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令，官方已於2.31.5與2.32.1完成修補\n  • 雖然該漏洞並非未登入即可利用，攻擊者還是必須先取得有效帳號，以及建立或修改工作流程的權限，不過，一旦成功利用，原本僅能編輯自動化流程的使用者，就可能以n8n服務程序擁有的權限操作主機。\n\n🔍 二、關鍵技術與架構細節\n  • 工作流程自動化平臺n8n修補一項高風險漏洞。已登入且能建立或修改工作流程的使用者，可利用特製的程式碼避開表達式沙箱限制，在執行n8n的主機上執行系統命令。官方已在n8n 2.31.5與2.32.1完成修補，建議使用者升級至這些版本或後續版本。\n  • n8n可將不同網路服務串接成自動化流程，並允許使用者在流程節點中加入JavaScript表達式，處理前一個步驟傳來的資料。為防止這些程式碼直接接觸伺服器底層環境，n8n設有表達式沙箱，也就是將程式碼限制在特定範圍內執行的隔離機制。\n  • 該漏洞與沙箱處理箭頭函式（Arrow Function）的方式有關。箭頭函式是JavaScript中較精簡的函式寫法，部分省略大括號、直接傳回單一運算式的箭頭函式，過去未套用原有的變數替換與檢查程序。攻擊者可藉此接觸原本應由沙箱隔離的Node.js全域物件，再呼叫作業系統功能。\n  • 新版已補上檢查程序，確保直接傳回單一運算式的箭頭函式，其中使用的變數會從受限制的資料環境取得，而不是連到n8n主機的Node.js執行環境。開發團隊也加入測試，確認這類表達式無法再取得主機中的Node.js全域物件，也無法藉此透過內建模組執行系統命令。\n\n💡 三、戰略佈局與產業影響\n  • n8n今年2月曾修補表達式沙箱漏洞CVE-2026-27577，同樣可能讓具備工作流程編輯權限的使用者在主機上執行命令。資安公司Security Joes研究團隊為確認該漏洞的修補措施是否仍可被繞過，重新檢視n8n對不同JavaScript語法的處理方式，發現直接傳回單一運算式的箭頭函式未納入完整檢查，因而找到這項新的沙箱繞過漏洞。\n  • 無法立即升級的管理員，可暫時限制n8n執行個體的存取，並只讓完全可信任的使用者建立或編輯工作流程，但官方表示這些措施無法完全排除風險。",
+    "key_metric": "工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可執行... │ iThome 科技報",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，工作流程自動化平臺n8n修補一項高風險表達式沙箱漏洞，具備工作流程編輯權限的使用者可藉精簡箭頭函式取得Node.js全域物件，進而在主機執行命令。此案例提示企業應重新評估後續資安與防護策略，值得企業決策者深度追蹤。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『工作流程自動化平臺n8n表達式沙箱再遭繞過，工作流程編輯者可...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "domain": "職能自動化革命",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+    "badge_class": "badge-manufacturing",
+    "title": "Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者提升至Root權限",
+    "pub_date": "2026-07-30 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177767",
+    "cover_image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "summary": "Linux網路流量排程子系統存在記憶體已釋放卻仍被使用問題，研究人員透過AI協助發現漏洞與利用程式開發。前述漏洞是STAR Labs研究員Lee Jia Jie藉助AI工具發現這項問題，利用AI協助分析核心程式碼、建立概念驗證，以及最佳化觸發漏洞所需的競爭時間窗口，值得企業決策者深度追蹤。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者提升至Root權限\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177767\n🏷️ 領域分類：職能自動化革命\n\n📌 一、事件背景與報導摘要\n  • Linux網路流量排程子系統存在記憶體已釋放卻仍被使用問題，研究人員透過AI協助發現漏洞與利用程式開發\n\n🔍 二、關鍵技術與架構細節\n  • 資安廠商STAR Labs研究人員近日揭露Linux核心漏洞CVE-2026-53264，這個高風險漏洞已存在數年，CVSS嚴重性評分7.8分，問題存在於負責網路封包流量控制的net/sched子系統，攻擊者可利用記憶體已釋放卻仍被使用（UAF）競爭條件問題，讓本機低權限使用者提升至Root權限，Linux核心上游已完成修補，主要Linux發行版中，包括RHEL、Azure Linux、Debian與Amazon Linux也都已完成修補。\n  • 前述漏洞是STAR Labs研究員Lee Jia Jie藉助AI工具發現這項問題，利用AI協助分析核心程式碼、建立概念驗證，以及最佳化觸發漏洞所需的競爭時間窗口，然後由研究人員進行漏洞驗證與利用程式的開發。",
+    "key_metric": "Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者提升... │ iThome 科技報",
+    "rationale": "對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，Linux網路流量排程子系統存在記憶體已釋放卻仍被使用問題，研究人員透過AI協助發現漏洞與利用程式開發。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 邊緣 AI 感測與自動化控制",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：職能自動化、工作流自動化、職能自動化革命。 切入點：【職能自動化、工作流自動化、職能自動化革命 視角】聚焦『Linux網路流量排程子系統存在高風險漏洞，可導致本機使用者...』之技術落地與實務應用，解析如何透過 AI 技術實踐【職能自動化、工作流自動化、職能自動化革命】與效益提升。直接契合本週《職能自動化革命：AI Agent 重塑企業工作模式》之【職能自動化、工作流自動化、職能自動化革命】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const casesData = (typeof EMBEDDED_CASES !== 'undefined' && EMBEDDED_CASES.length > 0) ? EMBEDDED_CASES : [];
+  const gridContainer = document.getElementById('cases-grid');
+
+  function renderCases(cases) {
+    if (!gridContainer) return;
+    gridContainer.innerHTML = '';
+
+    cases.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'case-card';
+      card.innerHTML = `
+        <div class="case-card-content">
+          <div class="case-top-meta">
+            <span class="case-date-source">📅 ${c.pub_date} │ 📰 ${c.source}</span>
+          </div>
+
+          <h3 class="case-title">${c.title}</h3>
+          <p class="case-summary">${c.summary}</p>
+
+          <div class="case-actions">
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="read-detail-btn">
+              閱讀全文 ↗
+            </a>
+          </div>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderCases(casesData);
+
+  // Keyword Radar Tag Click Handler
+  const kwTags = document.querySelectorAll('.kw-tag');
+  kwTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      kwTags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      const filterKw = tag.getAttribute('data-kw');
+      if (!filterKw || filterKw === 'all') {
+        renderCases(casesData);
+      } else {
+        const filtered = casesData.filter(c => {
+          const fullText = (c.title + ' ' + c.summary + ' ' + c.full_digest + ' ' + c.rationale).toLowerCase();
+          return fullText.includes(filterKw.toLowerCase());
+        });
+        renderCases(filtered.length > 0 ? filtered : casesData);
+      }
+    });
+  });
+
+  // Checklist Interactive State
+  const checkBoxes = document.querySelectorAll('.chk-box');
+  checkBoxes.forEach((box, idx) => {
+    const savedState = localStorage.getItem(`newsletter_chk_${idx}`);
+    if (savedState === 'true') {
+      box.checked = true;
+    }
+    box.addEventListener('change', () => {
+      localStorage.setItem(`newsletter_chk_${idx}`, box.checked);
+    });
+  });
+
+  // Reader Feedback & Floating Modal Interactions
+  const floatingBtn = document.getElementById('floating-feedback-btn');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const modalClose = document.getElementById('feedback-modal-close');
+
+  if (floatingBtn && feedbackModal) {
+    floatingBtn.addEventListener('click', () => {
+      feedbackModal.classList.add('active');
+    });
+  }
+
+  if (modalClose && feedbackModal) {
+    modalClose.addEventListener('click', () => {
+      feedbackModal.classList.remove('active');
+    });
+  }
+
+  if (feedbackModal) {
+    feedbackModal.addEventListener('click', (e) => {
+      if (e.target === feedbackModal) {
+        feedbackModal.classList.remove('active');
+      }
+    });
+  }
+
+  const allFeedbackBtns = document.querySelectorAll('.feedback-btn');
+  let selectedRating = null;
+
+  allFeedbackBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      allFeedbackBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRating = btn.getAttribute('data-rating');
+    });
+  });
+
+  function handleFeedbackSubmit(inputEl, submitBtn, modalToClose) {
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', () => {
+      const comment = inputEl ? inputEl.value.trim() : '';
+      if (!selectedRating && !comment) {
+        alert('請先點選滿意度評分或填寫意見建議，謝謝！');
+        return;
+      }
+
+      const feedbackData = {
+        rating: selectedRating || '5',
+        comment: comment,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('reader_feedback_submitted', JSON.stringify(feedbackData));
+      } catch(e) {}
+
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = '✅ 反饋成功！';
+      submitBtn.style.background = '#166534';
+
+      if (inputEl) inputEl.value = '';
+
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.background = '';
+        if (modalToClose) {
+          modalToClose.classList.remove('active');
+        }
+      }, 1800);
+    });
+  }
+
+  const inlineSubmit = document.getElementById('feedback-submit-btn');
+  const inlineInput = document.getElementById('feedback-input-text');
+  handleFeedbackSubmit(inlineInput, inlineSubmit, null);
+
+  const modalSubmit = document.getElementById('modal-feedback-submit');
+  const modalInput = document.getElementById('modal-feedback-text');
+  handleFeedbackSubmit(modalInput, modalSubmit, feedbackModal);
+});
+
+

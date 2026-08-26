@@ -1,0 +1,387 @@
+const EMBEDDED_CASES = [
+  {
+    "id": 1,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "前瞻 AI 演算法與系統整合",
+    "badge_class": "badge-manufacturing",
+    "title": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳",
+    "pub_date": "2026-07-30 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177760",
+    "cover_image": "https://www.ithome.com.tw/sites/default/files/field/image/xie_qu_58.jpg",
+    "summary": "Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。 生成式AI快速發展後，企業開始重新思考AI的價值。",
+    "full_digest": "📖 閱讀筆記與精華摘要：Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177760\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。\n  • 對零售業而言，食品浪費一直是永續管理的重要挑戰。生鮮商品具有保存期限短、需求波動大的特性，若補貨與銷售預測不精準，容易造成商品過期報廢。\n\n🔍 二、關鍵技術與架構細節\n  • 生成式AI快速發展後，企業開始重新思考AI的價值。對全球最大零售商Walmart而言，AI不只是提升銷售推薦或員工效率的工具，也逐漸成為改善零售流程、降低資源浪費的重要技術。在Walmart最新的FY2026永續報告書，Walmart揭露他們如何利用AI、資料分析、自動化與數位平臺，將永續目標融入日常營運，從食品管理、供應鏈減碳到AI治理，建立以數據驅動的永續零售模式。\n  • Walmart並非單純以AI解決所有永續問題，而是依照不同場景導入不同數位能力。其中，AI主要用於提升食品管理與營運決策效率，而供應鏈減碳則依靠數據平臺與碳管理工具，協助供應商共同降低排放。\n  • Walmart在報告書中指出，他們正利用人工智慧（AI）、機器學習與進階分析等技術，改善食品生命周期管理。透過分析歷史銷售資料、庫存狀態、季節因素與消費趨勢，AI模型協助門市更精準預測需求，調整補貨策略。\n  • 此外，Walmart也運用影像辨識與感測資料，協助判斷生鮮商品品質與保存狀態，讓門市能更早發現可能浪費的商品，提前採取降價促銷、優先銷售或食品捐贈等措施。\n\n💡 三、戰略佈局與產業影響\n  • 這些數位工具協助Walmart改善食品管理流程。在報告期間，Walmart全球食品捐贈量已超過9億磅。\n  • 除了利用AI分析資料與預測需求，Walmart也將生成式AI導入員工工作流程，讓AI從幕後分析工具，進一步成為員工日常工作的智慧助手。\n  • 生成式AI可協助員工透過自然語言方式取得企業資訊、查詢工作流程與獲得營運建議，降低過去需要人工搜尋與整理資訊的時間。相較於傳統AI用於分析歷史資料、預測未來趨勢，生成式AI則讓員工能直接與企業知識互動，將AI能力延伸至更多零售場景。\n  • 生成式AI的價值在於提升員工生產力與決策效率，讓第一線人員能更快速取得所需資訊。\n  • 隨著AI逐漸進入商品管理、員工服務與營運決策等核心流程，AI帶來的風險也成為企業永續經營面臨的新挑戰。\n  • 因此Walmart提出內部Responsible AI的治理架構，以確保AI在企業內部能被安全且負責任地使用，同時也是建立數位信任(Digital Trust) 的基礎。",
+    "key_metric": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺... │ iThome 科技報",
+    "rationale": "對應領域：策略決策、數據洞察、商業智慧。 切入點：【策略決策、數據洞察、商業智慧 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、數據洞察、商業智慧】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、數據洞察、商業智慧】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。 生成式AI快速發展後，企業開始重新思考AI的價值。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：前瞻 AI 演算法與系統整合。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：前瞻 AI 演算法與系統整合",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：策略決策、數據洞察、商業智慧。 切入點：【策略決策、數據洞察、商業智慧 視角】聚焦『Walmart如何用數據打造永續零售：AI預測食品浪費，還靠...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、數據洞察、商業智慧】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、數據洞察、商業智慧】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "AI 愈聰明，企業愈危險？日本資安政策全面升級",
+    "pub_date": "2026-08-02 23:50",
+    "source": "科技新報 TechNews",
+    "author": "科技新報 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://finance.technews.tw/2026/08/03/japan-revises-ai-policy-guidelines-to-bolster-cybersecurity/",
+    "cover_image": "https://img.technews.tw/wp-content/uploads/2024/01/05093814/romeo-a-Z8jc-XNTrGg-unsplash.jpg",
+    "summary": "高階AI模型出現，大幅降低駭客發動精密攻擊的門檻。 過去駭客尋找企業系統漏洞需要耗費數週的時間，現在用訓練有素的AI模型。",
+    "full_digest": "📖 閱讀筆記與精華摘要：AI 愈聰明，企業愈危險？日本資安政策全面升級\n📰 來源：科技新報 TechNews | 📅 發布日期：2026-08-02 23:50\n🔗 原文網址：https://finance.technews.tw/2026/08/03/japan-revises-ai-policy-guidelines-to-bolster-cybersecurity/\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 高階AI模型出現，大幅降低駭客發動精密攻擊的門檻。過去駭客尋找企業系統漏洞需要耗費數週的時間，現在用訓練有素的AI模型，幾分鐘內就自動化分析程式碼、找出零日漏洞並產生攻擊腳本。AI還能根據特定企業的溝通習慣，量身打造極具說服力的社群工程信與假訊息。這種高效率、低成本且自動化的攻擊模式，讓企業過去投資的傳統資安防線面臨失效風險。\n\n🔍 二、關鍵技術與架構細節\n  • 為了因應這項威脅，日本政府宣佈大幅提升日本AI安全研究所（AISI）編制，並計畫對高性能AI模型建立上市前的漏洞評估與審查機制。這代表未來企業在引進或開發AI系統時，將面臨更嚴格的合規監管與法律責任。\n  • 筆者觀察，日本這次AI政策修訂，提醒企業管理層的戰略風險：技術依賴度與供應鏈韌性。新修訂的指南特別強調，必須避免AI技術過度依賴特定國家或單一外國企業。日本政府正積極推動國產AI模型的研發，重點布局在控制機器人的實體AI（Physical AI）以及針對特定垂直產業的專用型AI（Vertical AI）。\n  • 面對政府政策的轉向與外部威脅的升級，管理層在推動數位轉型時，必須將「安全管理」確立為AI專案過關的前提條件。筆者建議，管理階層應從三個層面建立企業的防禦體系：\n  • 第二，重塑人機分工與防呆機制。日本政府政策指南特別提醒，過度依賴AI可能導致組織專業能力的退化與監督盲點。涉及高額資金調度、關鍵業務決策與核心系統存取的環節，企業必須堅持最終由人決策（Human-in-the-loop）的原則，確保即使AI模型出現錯誤或遭到惡意干擾時，管理團隊依然擁有及時接管與控制損害的能力。\n\n📊 三、營運數據與效益指標\n  • 這對企業決策者是明確警訊。如果公司核心業務營運、客戶資料分析或供應鏈排程，完全建立在外國的封閉式AI模型上，一旦遇到重大資安事件、出現合法爭議或因為地緣政治因素中斷服務，企業一夕之間就會陷入癱瘓。評估AI供應商的風險與資料主權，已經成為董事會必須承擔的管理責任。\n  • 第一，建立嚴格的AI資料管理規範。管理層必須明確規範員工使用AI工具的界線，防止員工將未公開的商業機密、產品原始碼或客戶個資上傳至未經安全認證的公有雲AI工具。外購的AI系統，必須要求供應商提供透明漏洞檢測報告與合法證明。\n  • AI快速演進正在重新定義企業的營運規則。當日本政府率先將資安升級為AI發展的核心政策時，也代表著盲目追逐技術效能的時代已經結束。對於企業執行長與管理團隊而言，AI越聰明，企業的風險管理就必須越縝密。將資安韌性與合規治理融入企業的經營基因，是企業在充滿不確定性的市場，保障商譽、保護資產並贏得客戶信任的根本基礎。\n\n💡 四、戰略佈局與產業影響\n  • 第三，將AI資安納入企業營運持續計畫。企業資訊長需要將「AI系統遭威脅癱瘓」設定為常態性的演練情境。當公司依賴的AI模型或雲端服務被迫暫停時，營運部門必須具備預備的替代流程，確保核心業務不會因為技術故障而完全停擺。",
+    "key_metric": "AI 愈聰明，企業愈危險？日本資安政策全面升級... │ 科技新報 TechNews",
+    "rationale": "對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『AI 愈聰明，企業愈危險？日本資安政策全面升級』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 科技新報 TechNews 報導，高階AI模型出現，大幅降低駭客發動精密攻擊的門檻。 過去駭客尋找企業系統漏洞需要耗費數週的時間，現在用訓練有素的AI模型。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『AI 愈聰明，企業愈危險？日本資安政策全面升級』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "LLM 代理與 AI 助手 (Agent) / 開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "AI代理安全業者Obsidian Security募資8,500萬美元，估值達11億美元",
+    "pub_date": "2026-08-10 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177989",
+    "cover_image": "https://www.ithome.com.tw/sites/default/files/field/image/0808-obsidian_security-guan_fang_tu_.jpg",
+    "summary": "AI代理安全業者Obsidian Security完成8,500萬美元D輪募資，估值達11億美元。 其平臺主打盤點企業環境中的AI代理，並管理代理存取資料、系統及執行操作的權限。",
+    "full_digest": "📖 閱讀筆記與精華摘要：AI代理安全業者Obsidian Security募資8,500萬美元，估值達11億美元\n📰 來源：iThome 科技報 | 📅 發布日期：2026-08-10 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177989\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • AI代理安全業者Obsidian Security完成8,500萬美元D輪募資，估值達11億美元。其平臺主打盤點企業環境中的AI代理，並管理代理存取資料、系統及執行操作的權限\n\n🔍 二、關鍵技術與架構細節\n  • Obsidian Security指出，企業第三方應用程式中的非人類身分數量已是人類身分的144倍。該公司提供非人類身分與AI代理的安全治理及防護功能，協助企業控管AI代理可存取的資料與可執行的操作。\n  • Obsidian Security平臺可協助企業盤點環境中的AI代理，以及這些代理使用的模型上下文協定（MCP）伺服器與大型語言模型（LLM），讓資安團隊掌握AI代理連接第三方應用程式及後端系統的情形。AI代理執行任務時，該平臺可偵測並阻擋代理未經授權的權限提升、過度的資料存取，或從事違反企業政策的行為。企業也可藉此管控多種AI平臺建立或執行的AI代理，支援的平臺涵蓋Microsoft Copilot Studio、Salesforce Agentforce、OpenAI、Google Vertex AI、Amazon Bedrock及Anthropic Claude等。\n\n📊 三、營運數據與效益指標\n  • AI代理快速進入企業應用，也讓權限與資料存取風險受到更多關注。專注於第三方應用程式非人類身分與AI代理安全的業者Obsidian Security宣布完成8,500萬美元D輪募資，公司估值達11億美元。這筆資金將用於強化AI代理安全相關研發，並進一步拓展大型企業市場。",
+    "key_metric": "AI代理安全業者Obsidian Security募資8,500... │ iThome 科技報",
+    "rationale": "對應領域：策略決策、風險預警、驅動的策略決策。 切入點：【策略決策、風險預警、驅動的策略決策 視角】聚焦『AI代理安全業者Obsidian Security募資8,5...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警、驅動的策略決策】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警、驅動的策略決策】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，AI代理安全業者Obsidian Security完成8,500萬美元D輪募資，估值達11億美元。 其平臺主打盤點企業環境中的AI代理，並管理代理存取資料、系統及執行操作的權限。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：LLM 代理與 AI 助手 (Agent) / 開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：策略決策、風險預警、驅動的策略決策。 切入點：【策略決策、風險預警、驅動的策略決策 視角】聚焦『AI代理安全業者Obsidian Security募資8,5...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警、驅動的策略決策】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警、驅動的策略決策】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行動指引",
+    "pub_date": "2026-08-04 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177845",
+    "cover_image": "https://www.ithome.com.tw/sites/default/files/field/image/42prnskv.o50-156.jpg",
+    "summary": "7月31日數位發展部資通安全署發布新聞稿指出，為了協助中小企業在面臨資安危機當下，迅速採取適當措施，降低資安攻擊損害並儘速恢復正常營運，他們發布了資安事件應變處理行動指引。 上週資安署針對中小企業發布資安事件應變處理行動指引，針對六種常見的資安威脅，提供具體察覺問題的方式。",
+    "full_digest": "📖 閱讀筆記與精華摘要：為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行動指引\n📰 來源：iThome 科技報 | 📅 發布日期：2026-08-04 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177845\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 上週資安署針對中小企業發布資安事件應變處理行動指引，針對六種常見的資安威脅，提供具體察覺問題的方式，以及採取行動的步驟\n  • 這份指引也將資安事件應變程序區分為四大階層，從事前的準備階段，到事件發生當下的偵測與應變處理、通報與對外溝通，以及事件後續的復原與持續改善。資安署也在指引裡向經營決策階層喊話，強調公司的資安治理必須由管理階層負責，而且資安事件應變計畫須由管理階層審查與核可，以免事發後因跨部門調度失靈，而失去作用。\n\n🔍 二、關鍵技術與架構細節\n  • 7月31日數位發展部資通安全署發布新聞稿指出，為了協助中小企業在面臨資安危機當下，迅速採取適當措施，降低資安攻擊損害並儘速恢復正常營運，他們發布了資安事件應變處理行動指引，將資安事故的處理流程規畫為四大階段，並針對中小企業最常面臨的六大威脅提供處理步驟，涵蓋設備受感染異常、帳號被盜、網路釣魚、商業支付詐欺、勒索軟體攻擊，以及阻斷服務攻擊（DDoS）等，並附具體可操作的「應變處理檢核清單」、「應變里程碑建議時限」及「聲明稿範本」，協助企業在壓力環境下有條不紊地處理資安事件。",
+    "key_metric": "為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行動指... │ iThome 科技報",
+    "rationale": "對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，7月31日數位發展部資通安全署發布新聞稿指出，為了協助中小企業在面臨資安危機當下，迅速採取適當措施，降低資安攻擊損害並儘速恢復正常營運，他們發布了資安事件應變處理行動指引。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『為協助中小企業因應六種資安威脅，資安署發布資安事件應變處理行...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI發展",
+    "pub_date": "2026-07-31 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177796",
+    "cover_image": "https://www.ithome.com.tw/sites/default/files/field/image/xie_qu_60.jpg",
+    "summary": "行政院今年6月召開首次的「國家人工智慧戰略特別委員會」會議，將算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適列為我國發展AI的重要基礎。 行政院副院長鄭麗君在「總統盃黑客松」徵件啟動活動中揭露我國的資料治理策略，她表示，資料是推動創新、催生產業與發展主權AI的重要基礎，政府正推動資料治理制度。",
+    "full_digest": "📖 閱讀筆記與精華摘要：鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI發展\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-31 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177796\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • 行政院今年6月召開首次的「國家人工智慧戰略特別委員會」會議，將算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適列為我國發展AI的重要基礎。\n  • 她表示，總統盃黑客松自2018年舉辦以來，已成為政府運用開放資料、公私協力推動創新的重要平台。過去黑客松模式主要是政府提出公共議題與需求，開放資料資源，由民間團隊提出創新解決方案；今年主題為「智慧農業、安全永續」，鼓勵參賽團隊運用人工智慧與資料數據，解決農業治理與永續發展問題。\n\n🔍 二、關鍵技術與架構細節\n  • 行政院副院長鄭麗君在「總統盃黑客松」徵件啟動活動中揭露我國的資料治理策略，她表示，資料是推動創新、催生產業與發展主權AI的重要基礎，政府正推動資料治理制度，促進資料開放與流通，支撐臺灣主權AI應用發展。\n  • 行政院長卓榮泰今年6月召開首次「國家人工智慧戰略特別委員會」會議時，已將資料治理列為我國發展主權AI所需的重要新基礎建設之一。政府盤點主權AI發展所需基礎，包括算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適等等。\n  • 顯示政府推動AI不僅著重模型與運算能力，也將資料治理視為支撐AI發展的重要環節。\n  • 在資料治理方面，鄭麗君表示，為兼顧資料創新、個資保護、著作權保護原則，行政院已持續研議「促進資料創新利用發展條例」立法，希望能夠促進4項資料流通機制，包括政府資料開放、政府資料共享、產業資料共享、非營利公益導向的資料利他機制。目的是經由建構資料開放及流通的治理框架，透過資料創新促進AI應用發展，開拓臺灣實踐主權AI的路徑。\n\n💡 三、戰略佈局與產業影響\n  • 為落實主權AI及資料治理政策，她也透露行政院已在「智慧國家2.0推動小組」下成立「主權AI及資料治理」專案會議，並要求各部會副首長擔任資料長，共同組成「資料長聯盟」。\n  • 未來各部會的資料長，負責推動盤點掌握的資料，推動政府資料開放、政府資料共享，以及AI訓練語料盤點與整備。\n  • 鄭麗君表示，各部會將優先從不涉及個資的項目著手，提升資料品質，使其成為「AI-Ready Data」，優先釋出有臺灣在地價值內涵的高品質語料，協助AI訓練。\n  • 今年總統盃黑客松由農業部承辦，並與數位發展部共同推動，以「智慧農業、安全永續」為主題，邀請團隊運用AI與資料數據，在智慧治理、安心社會及永續轉型三大方向提出解決方案。\n  • 從黑客松的主題轉變可看出政府轉型及資料政策的新方向。過去政府透過開放資料，讓民間取得政府的公共資料並發展創新服務，透過黑客松競賽來引導公私協力的發展；現在則隨著生成式AI快速發展，政府重視資料品質與AI可用性，透過適合AI應用的資料資源，促進AI解決公共問題。",
+    "key_metric": "鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI發展... │ iThome 科技報",
+    "rationale": "對應領域：策略決策、風險預警、商業智慧。 切入點：【策略決策、風險預警、商業智慧 視角】聚焦『鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警、商業智慧】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警、商業智慧】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，行政院今年6月召開首次的「國家人工智慧戰略特別委員會」會議，將算力、能源、網路資訊安全、資料安全、AI應用與服務安全、AI評測機制、資料治理、相關法規調適列為我國發展AI的重要基礎。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：策略決策、風險預警、商業智慧。 切入點：【策略決策、風險預警、商業智慧 視角】聚焦『鄭麗君揭政府資料治理布局，立法促4大資料流通機制支撐主權AI...』之技術落地與實務應用，解析如何透過 AI 技術實踐【策略決策、風險預警、商業智慧】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【策略決策、風險預警、商業智慧】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "domain": "AI 驅動的策略",
+    "tech_stack": "開源套件供應鏈與資安防護",
+    "badge_class": "badge-manufacturing",
+    "title": "西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經身分驗證的攻擊者可藉此取得完整存取權限",
+    "pub_date": "2026-07-27 00:00",
+    "source": "iThome 科技報",
+    "author": "iThome 產業資深編輯",
+    "read_time": "5 分鐘細讀",
+    "link": "https://www.ithome.com.tw/news/177667",
+    "cover_image": "https://www.ithome.com.tw/sites/default/files/field/image/siemens_opcenter_x.png",
+    "summary": "西門子近日發布資安公告，修補Opcenter X的重大漏洞CVE-2026-56451，CVSS v3.1與v4.0嚴重性評分均達10.0分，可能嚴重影響企業的生產管理。 西門子用於整合企業工廠製造流程與生產營運管理的Opcenter X平臺。",
+    "full_digest": "📖 閱讀筆記與精華摘要：西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經身分驗證的攻擊者可藉此取得完整存取權限\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-27 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177667\n🏷️ 領域分類：AI 驅動的策略\n\n📌 一、事件背景與報導摘要\n  • Opcenter X製造管理平臺被發現存在繞過身分驗證機制問題，攻擊者可偽造權杖冒充管理者，進而獲得系統完整存取權限，用戶需立即修補\n\n🔍 二、關鍵技術與架構細節\n  • 西門子用於整合企業工廠製造流程與生產營運管理的Opcenter X平臺，被發現存在可能讓攻擊者取得完整系統存取權限的重大漏洞。西門子近日發布資安公告，修補Opcenter X的重大漏洞CVE-2026-56451，CVSS v3.1與v4.0嚴重性評分均達10.0分，可能嚴重影響企業的生產管理，用戶須立即升級至已完成修補的V2604以上版本。\n  • CVE-2026-56451的問題源自Opcenter X無法正確驗證用戶身分驗證流程中，JWT權杖（JSON Web Token）標頭指定的演算法，未經身分驗證的遠端攻擊者可藉此偽造任意JWT權杖，繞過身分驗證機制，冒充包括管理員在內的任何使用者，進而取得完整系統存取權限。",
+    "key_metric": "西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經身分... │ iThome 科技報",
+    "rationale": "對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+    "cover_bg": "linear-gradient(135deg, #059669, #10b981)",
+    "icon": "🏭",
+    "problem_statement": {
+      "text": "根據 iThome 科技報 報導，西門子近日發布資安公告，修補Opcenter X的重大漏洞CVE-2026-56451，CVSS v3.1與v4.0嚴重性評分均達10.0分，可能嚴重影響企業的生產管理。",
+      "pain_points": [
+        "請參閱全文章節拆解「一、事件背景與產業影響」"
+      ]
+    },
+    "innovation_breakthrough": {
+      "text": "採用關鍵技術：開源套件供應鏈與資安防護。詳細技術細節與架構請參閱全文章節拆解。",
+      "tech_highlights": [
+        "核心採用關鍵技術：開源套件供應鏈與資安防護",
+        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
+      ]
+    },
+    "impact_and_roi": {
+      "text": "專家評估切入點：對應領域：風險預警、從數據洞察到風險預警。 切入點：【風險預警、從數據洞察到風險預警 視角】聚焦『西門子Opcenter X管理平臺存在CVSS滿分漏洞，未經...』之技術落地與實務應用，解析如何透過 AI 技術實踐【風險預警、從數據洞察到風險預警】與效益提升。直接契合本週《AI 驅動的策略決策：從數據洞察到風險預警》之【風險預警、從數據洞察到風險預警】重點對應領域，為企業主管提供實務決策依據。",
+      "impact_results": [
+        "請參閱全文章節拆解「四、決策效益與行動建議」"
+      ]
+    }
+  }
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const casesData = (typeof EMBEDDED_CASES !== 'undefined' && EMBEDDED_CASES.length > 0) ? EMBEDDED_CASES : [];
+  const gridContainer = document.getElementById('cases-grid');
+
+  function renderCases(cases) {
+    if (!gridContainer) return;
+    gridContainer.innerHTML = '';
+
+    cases.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'case-card';
+      
+      const coverImgSrc = c.cover_image || c.cover_bg;
+      const coverImageHtml = coverImgSrc ? `
+        <div class="card-img-wrap">
+          <img src="${coverImgSrc}" alt="${c.title}" loading="lazy" onerror="this.parentElement.style.display='none';">
+        </div>
+      ` : '';
+
+      card.innerHTML = `
+        ${coverImageHtml}
+        <div class="case-card-content">
+          <div class="case-top-meta">
+            <span class="case-date-source">📅 ${c.pub_date} │ 📰 ${c.source}</span>
+          </div>
+
+          <h3 class="case-title">${c.title}</h3>
+          <p class="case-summary">${c.summary}</p>
+
+          <div class="case-actions">
+            <a href="${c.link}" target="_blank" rel="noopener noreferrer" class="read-detail-btn">
+              閱讀全文 ↗
+            </a>
+          </div>
+        </div>
+      `;
+      gridContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderCases(casesData);
+
+  // Keyword Radar Tag Click Handler
+  const kwTags = document.querySelectorAll('.kw-tag');
+  kwTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      kwTags.forEach(t => t.classList.remove('active'));
+      tag.classList.add('active');
+
+      const filterKw = tag.getAttribute('data-kw');
+      if (!filterKw || filterKw === 'all') {
+        renderCases(casesData);
+      } else {
+        const filtered = casesData.filter(c => {
+          const fullText = (c.title + ' ' + c.summary + ' ' + c.full_digest + ' ' + c.rationale).toLowerCase();
+          return fullText.includes(filterKw.toLowerCase());
+        });
+        renderCases(filtered.length > 0 ? filtered : casesData);
+      }
+    });
+  });
+
+  // Checklist Interactive State
+  const checkBoxes = document.querySelectorAll('.chk-box');
+  checkBoxes.forEach((box, idx) => {
+    const savedState = localStorage.getItem(`newsletter_chk_${idx}`);
+    if (savedState === 'true') {
+      box.checked = true;
+    }
+    box.addEventListener('change', () => {
+      localStorage.setItem(`newsletter_chk_${idx}`, box.checked);
+    });
+  });
+
+  // Reader Feedback & Floating Modal Interactions
+  const floatingBtn = document.getElementById('floating-feedback-btn');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const modalClose = document.getElementById('feedback-modal-close');
+
+  if (floatingBtn && feedbackModal) {
+    floatingBtn.addEventListener('click', () => {
+      feedbackModal.classList.add('active');
+    });
+  }
+
+  if (modalClose && feedbackModal) {
+    modalClose.addEventListener('click', () => {
+      feedbackModal.classList.remove('active');
+    });
+  }
+
+  if (feedbackModal) {
+    feedbackModal.addEventListener('click', (e) => {
+      if (e.target === feedbackModal) {
+        feedbackModal.classList.remove('active');
+      }
+    });
+  }
+
+  const allFeedbackBtns = document.querySelectorAll('.feedback-btn');
+  let selectedRating = null;
+
+  allFeedbackBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      allFeedbackBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedRating = btn.getAttribute('data-rating');
+    });
+  });
+
+  function handleFeedbackSubmit(inputEl, submitBtn, modalToClose) {
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', () => {
+      const comment = inputEl ? inputEl.value.trim() : '';
+      if (!selectedRating && !comment) {
+        alert('請先點選滿意度評分或填寫意見建議，謝謝！');
+        return;
+      }
+
+      const feedbackData = {
+        rating: selectedRating || '5',
+        comment: comment,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        localStorage.setItem('reader_feedback_submitted', JSON.stringify(feedbackData));
+      } catch(e) {}
+
+      const originalText = submitBtn.innerText;
+      submitBtn.innerText = '✅ 反饋成功！';
+      submitBtn.style.background = '#166534';
+
+      if (inputEl) inputEl.value = '';
+
+      setTimeout(() => {
+        submitBtn.innerText = originalText;
+        submitBtn.style.background = '';
+        if (modalToClose) {
+          modalToClose.classList.remove('active');
+        }
+      }, 1800);
+    });
+  }
+
+  const inlineSubmit = document.getElementById('feedback-submit-btn');
+  const inlineInput = document.getElementById('feedback-input-text');
+  handleFeedbackSubmit(inlineInput, inlineSubmit, null);
+
+  const modalSubmit = document.getElementById('modal-feedback-submit');
+  const modalInput = document.getElementById('modal-feedback-text');
+  handleFeedbackSubmit(modalInput, modalSubmit, feedbackModal);
+});
+
+
