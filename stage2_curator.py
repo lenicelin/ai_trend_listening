@@ -55,11 +55,11 @@ def enforce_rate_limit_delay(min_interval: float = 4.0):
         time.sleep(sleep_dur)
     _LAST_LLM_CALL_TIME = time.time()
 
-def call_llm_api(prompt: str, timeout: int = 15) -> str:
+def call_llm_api(prompt: str, timeout: int = 25) -> str:
     """
-    Unified LLM API Invoker calling Gemini API with 4-second rate-limiting buffer.
+    Unified LLM API Invoker calling Gemini API with rate-limiting buffer.
     """
-    enforce_rate_limit_delay(4.0)
+    enforce_rate_limit_delay(0.8)
 
     gemini_key = os.environ.get("GEMINI_API_KEY")
     if not gemini_key:
@@ -87,22 +87,17 @@ def expand_domain_keywords_via_llm(domain_name: str) -> list:
 範例輸出：
 ["電動車", "EV", "Tesla", "特斯拉", "BYD", "比亞迪", "Battery", "BMS", "Autonomous Driving", "自動駕駛", "ADAS", "車用晶片"]
 """
-    for attempt in range(2):
-        try:
-            if attempt > 0:
-                import time
-                time.sleep(2)
-            raw_response_text = call_llm_api(prompt, timeout=12)
-            text = raw_response_text.strip().replace("```json", "").replace("```", "").strip()
-            kws = json.loads(text)
-            if isinstance(kws, list):
-                kws_clean = [str(k).strip().lower() for k in kws if str(k).strip()]
-                _DOMAIN_EXPANSION_CACHE[domain_name] = kws_clean
-                print(f"🤖 [Tier 1 LLM Expansion] 【{domain_name}】 -> 成功動態擴充 {len(kws_clean)} 個關鍵字 (例如: {kws_clean[:5]})")
-                return kws_clean
-        except Exception as e:
-            if attempt == 1:
-                print(f"⚠️ [Tier 1 LLM Notice] 關鍵字擴充降級跳過 ({e})")
+    try:
+        raw_response_text = call_llm_api(prompt, timeout=6)
+        text = raw_response_text.strip().replace("```json", "").replace("```", "").strip()
+        kws = json.loads(text)
+        if isinstance(kws, list):
+            kws_clean = [str(k).strip().lower() for k in kws if str(k).strip()]
+            _DOMAIN_EXPANSION_CACHE[domain_name] = kws_clean
+            print(f"🤖 [Tier 1 LLM Expansion] 【{domain_name}】 -> 成功動態擴充 {len(kws_clean)} 個關鍵字 (例如: {kws_clean[:5]})")
+            return kws_clean
+    except Exception as e:
+        print(f"⚠️ [Tier 1 LLM Notice] 關鍵字擴充降級跳過 ({e})")
     return []
 
 def get_active_newsletter_theme():
@@ -489,8 +484,11 @@ def main():
     parser = argparse.ArgumentParser(description="Stage 2 Curator Engine")
     parser.add_argument("--mode", choices=["theme", "dynamic"], default=os.environ.get("PIPELINE_MODE", "theme"),
                         help="Curation mode: 'theme' (特定預設主題 20 篇) or 'dynamic' (全網無預設主題探索)")
+    parser.add_argument("--since", default=os.environ.get("START_DATE", "2026-08-01"),
+                        help="Filter articles published on or after date (default: '2026-08-01')")
     args, unknown = parser.parse_known_args()
     pipeline_mode = args.mode.lower()
+    since_date = args.since.strip()
 
     json_path = "data/stage1_ai_news.json"
     articles = []
@@ -515,6 +513,11 @@ def main():
     if not articles:
         print(f"❌ Error: Cannot find Stage 1 database at {json_path}")
         return
+
+    if since_date:
+        filtered_articles = [a for a in articles if str(a.get("pub_date", "")).strip() >= since_date]
+        print(f"📅 [Date Filter] Filtered down from {len(articles)} to {len(filtered_articles)} articles published on or after {since_date}.")
+        articles = filtered_articles
 
     theme_from_excel, issue_tag_excel, focus_domains_excel, goal_desc_excel = get_active_newsletter_theme()
     is_excel_dynamic = any(k in theme_from_excel.lower() for k in ["動態", "無預設", "全網", "auto", "dynamic"])

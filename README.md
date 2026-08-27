@@ -1,10 +1,33 @@
-# AI Trend Listening
+# 智企前瞻 AI Pulse — AI 趨勢聽誌與電子報自動化生成系統
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15%2B-blue)](https://www.postgresql.org/)
+[![pgvector](https://img.shields.io/badge/pgvector-Supported-green)](https://github.com/pgvector/pgvector)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
+
+**智企前瞻 AI Pulse** 是一套專為企業高階主管與決策團隊打造的自動化 AI 趨勢監聽、精選策展與電子報發行系統。系統結合強大的多階段流水線（Multi-Stage Pipeline）、PostgreSQL + `pgvector` 向量資料庫架構與 LLM 輔助摘要生成，確保發行內容兼具權威性、商業實務價值與 100% 資料真實度。
+
+---
 
 ## 📌 核心特色與亮點 (Key Features)
-**多階段單向流水線 (Multi-Stage Pipeline)**
+
+1. **零捏造數據 (Zero Hallucination)**
+   - 100% 忠實擷取並對接真實權威新聞媒體報導（如 TechCrunch、Wired、VentureBeat、Google News 美/台雙區檢索）。
+   - 新聞標題、連結、來源媒體與原創摘要絕對真實，避免 LLM 虛構數據。
+
+2. **動態日期區間過濾 (Flexible Date Filtering)**
+   - 支援指定新聞開始發布日期區間（例如 `--since 2026-08-01` 或設定 `.env` 的 `START_DATE`），精準聚焦最新重磅趨勢。
+
+3. **多階段單向流水線 (Multi-Stage Pipeline)**
    - **Stage 1 (監聽與品質過濾)**：多源頭 RSS 與 API 自動擷取，經特定應用場景、技術細節與量化效益 3 大原則自動清理去重。
    - **Stage 2 (動態主題策展)**：讀取編輯團隊設定之週主題，進行 4-Tier 權重評分（100分制），並生成 HR、財務、法務、行銷、製造 5 大職能切入視角與選入理由。
    - **Stage 3 (電子報生成與自動歸檔)**：動態同步網頁版 `newsletter.html` / `newsletter.js` / `cases.json`，並一鍵封存離線單檔 HTML 至 `archives/` 目錄。
+
+4. **高併發資料庫支援 (PostgreSQL + pgvector)**
+   - 專為企業級運維設計，支援原生 PostgreSQL 與 `pgvector` 擴充套件，具備 1536 維向量 Embeddings 語意檢索能力。
+   - 完全相容 Docker Compose 本地部署及 Supabase / AWS RDS / Neon 等雲端託管資料庫。
+
+---
 
 ## 🏗️ 系統架構與流水線流程 (System Architecture)
 
@@ -197,3 +220,18 @@ ai_trend_listening/
 ├── 📄 docker-compose.yml            # PostgreSQL + pgvector Docker 配置
 ├── 📄 requirements.txt              # Python 依賴套件清單
 └── 📄 .env.example                  # 環境變數設定範例
+```
+
+---
+
+## 📖 相關技術文件與手冊 (Documentation)
+
+- 📋 [系統技術實作計畫書 (IMPLEMENTATION_PLAN.md)](file:///c:/Users/Pei-Ying/.antigravity/ai_trend_listening/docs/IMPLEMENTATION_PLAN.md)
+- 📘 [PostgreSQL 升級與維運指南 (POSTGRES_MIGRATION_GUIDE.md)](file:///c:/Users/Pei-Ying/.antigravity/ai_trend_listening/docs/POSTGRES_MIGRATION_GUIDE.md)
+- 📕 [產品需求規格書 (PRD.md)](file:///c:/Users/Pei-Ying/.antigravity/ai_trend_listening/docs/PRD.md)
+
+---
+
+## 📄 版權與維護 (License)
+
+智企前瞻 AI Pulse © 2026. All rights reserved.

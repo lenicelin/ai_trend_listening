@@ -20,3 +20,5 @@ scratch/
 # System Files
 .DS_Store
 Thumbs.db
+~$*
+archives/his_*

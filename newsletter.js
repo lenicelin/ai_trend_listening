@@ -39,44 +39,6 @@ const EMBEDDED_CASES = [
   },
   {
     "id": 2,
-    "domain": "供應鏈",
-    "tech_stack": "前瞻 AI 演算法與系統整合",
-    "badge_class": "badge-supplychain",
-    "title": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳",
-    "pub_date": "2026-07-30 00:00",
-    "source": "iThome 科技報",
-    "author": "iThome 產業資深編輯",
-    "read_time": "5 分鐘細讀",
-    "link": "https://www.ithome.com.tw/news/177760",
-    "cover_image": "https://www.ithome.com.tw/sites/default/files/field/image/xie_qu_58.jpg",
-    "summary": "Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。 生成式AI快速發展後，企業開始重新思考AI的價值。",
-    "full_digest": "📖 閱讀筆記與精華摘要：Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺讓供應鏈減碳\n📰 來源：iThome 科技報 | 📅 發布日期：2026-07-30 00:00\n🔗 原文網址：https://www.ithome.com.tw/news/177760\n🏷️ 領域分類：供應鏈\n\n📌 一、事件背景與報導摘要\n  • Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。\n  • 對零售業而言，食品浪費一直是永續管理的重要挑戰。生鮮商品具有保存期限短、需求波動大的特性，若補貨與銷售預測不精準，容易造成商品過期報廢。\n\n🔍 二、關鍵技術與架構細節\n  • 生成式AI快速發展後，企業開始重新思考AI的價值。對全球最大零售商Walmart而言，AI不只是提升銷售推薦或員工效率的工具，也逐漸成為改善零售流程、降低資源浪費的重要技術。在Walmart最新的FY2026永續報告書，Walmart揭露他們如何利用AI、資料分析、自動化與數位平臺，將永續目標融入日常營運，從食品管理、供應鏈減碳到AI治理，建立以數據驅動的永續零售模式。\n  • Walmart並非單純以AI解決所有永續問題，而是依照不同場景導入不同數位能力。其中，AI主要用於提升食品管理與營運決策效率，而供應鏈減碳則依靠數據平臺與碳管理工具，協助供應商共同降低排放。\n  • Walmart在報告書中指出，他們正利用人工智慧（AI）、機器學習與進階分析等技術，改善食品生命周期管理。透過分析歷史銷售資料、庫存狀態、季節因素與消費趨勢，AI模型協助門市更精準預測需求，調整補貨策略。\n  • 此外，Walmart也運用影像辨識與感測資料，協助判斷生鮮商品品質與保存狀態，讓門市能更早發現可能浪費的商品，提前採取降價促銷、優先銷售或食品捐贈等措施。\n\n💡 三、戰略佈局與產業影響\n  • 這些數位工具協助Walmart改善食品管理流程。在報告期間，Walmart全球食品捐贈量已超過9億磅。\n  • 除了利用AI分析資料與預測需求，Walmart也將生成式AI導入員工工作流程，讓AI從幕後分析工具，進一步成為員工日常工作的智慧助手。\n  • 生成式AI可協助員工透過自然語言方式取得企業資訊、查詢工作流程與獲得營運建議，降低過去需要人工搜尋與整理資訊的時間。相較於傳統AI用於分析歷史資料、預測未來趨勢，生成式AI則讓員工能直接與企業知識互動，將AI能力延伸至更多零售場景。\n  • 生成式AI的價值在於提升員工生產力與決策效率，讓第一線人員能更快速取得所需資訊。\n  • 隨著AI逐漸進入商品管理、員工服務與營運決策等核心流程，AI帶來的風險也成為企業永續經營面臨的新挑戰。\n  • 因此Walmart提出內部Responsible AI的治理架構，以確保AI在企業內部能被安全且負責任地使用，同時也是建立數位信任(Digital Trust) 的基礎。",
-    "key_metric": "Walmart如何用數據打造永續零售：AI預測食品浪費，還靠平臺... │ iThome 科技報",
-    "rationale": "對應主題《Walmart如何用數據打造永續零售：A》核心技術落地與實務應用。",
-    "cover_bg": "linear-gradient(135deg, #0d9488, #06b6d4)",
-    "icon": "📦",
-    "problem_statement": {
-      "text": "根據 iThome 科技報 報導，Walmart導入AI，改善不易保存的生鮮及食品管理，並導入Gen AI提高員工生產力，因應AI深入企業內部，為降低AI帶來的風險，Walmart也在永續報告書中揭露AI治理機制。 生成式AI快速發展後，企業開始重新思考AI的價值。",
-      "pain_points": [
-        "請參閱全文章節拆解「一、事件背景與產業影響」"
-      ]
-    },
-    "innovation_breakthrough": {
-      "text": "採用關鍵技術：前瞻 AI 演算法與系統整合。詳細技術細節與架構請參閱全文章節拆解。",
-      "tech_highlights": [
-        "核心採用關鍵技術：前瞻 AI 演算法與系統整合",
-        "請參閱全文章節拆解「二、關鍵技術與實作細節」"
-      ]
-    },
-    "impact_and_roi": {
-      "text": "專家評估切入點：對應主題《Walmart如何用數據打造永續零售：A》核心技術落地與實務應用。",
-      "impact_results": [
-        "請參閱全文章節拆解「四、決策效益與行動建議」"
-      ]
-    }
-  },
-  {
-    "id": 3,
     "domain": "製造",
     "tech_stack": "邊緣 AI 感測與自動化控制",
     "badge_class": "badge-manufacturing",
@@ -114,7 +76,7 @@ const EMBEDDED_CASES = [
     }
   },
   {
-    "id": 4,
+    "id": 3,
     "domain": "高階治理",
     "tech_stack": "LLM 代理與 AI 助手 (Agent) / 開源套件供應鏈與資安防護",
     "badge_class": "badge-enterprise",
@@ -152,7 +114,7 @@ const EMBEDDED_CASES = [
     }
   },
   {
-    "id": 5,
+    "id": 4,
     "domain": "財務",
     "tech_stack": "LLM 代理與 AI 助手 (Agent) / 開源套件供應鏈與資安防護",
     "badge_class": "badge-finance",
@@ -190,7 +152,7 @@ const EMBEDDED_CASES = [
     }
   },
   {
-    "id": 6,
+    "id": 5,
     "domain": "資安",
     "tech_stack": "開源套件供應鏈與資安防護",
     "badge_class": "badge-legal",

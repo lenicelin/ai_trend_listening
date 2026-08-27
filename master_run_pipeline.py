@@ -28,17 +28,19 @@ def run_stage(script_name, description, extra_args=None):
         cmd.extend(extra_args)
     
     start_time = time.time()
-    result = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8")
-    elapsed = time.time() - start_time
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, encoding="utf-8", bufsize=1)
     
-    print(result.stdout)
-    if result.stderr:
-        print(f"⚠️ [Notice/Stderr]:\n{result.stderr}")
+    if proc.stdout:
+        for line in proc.stdout:
+            print(line, end="", flush=True)
+            
+    proc.wait()
+    elapsed = time.time() - start_time
         
-    if result.returncode == 0:
+    if proc.returncode == 0:
         print(f"✅ {description} completed successfully in {elapsed:.2f}s!")
     else:
-        print(f"❌ Error running {script_name} (Exit code: {result.returncode})")
+        print(f"❌ Error running {script_name} (Exit code: {proc.returncode})")
         return False
     return True
 
@@ -47,16 +49,19 @@ def main():
     parser = argparse.ArgumentParser(description="Master AI Newsletter Pipeline")
     parser.add_argument("--mode", choices=["theme"], default="theme",
                         help="Pipeline mode: 'theme' (主題專題模式, 20 篇)")
+    parser.add_argument("--since", default=os.environ.get("START_DATE", "2026-08-01"),
+                        help="Filter articles starting from date (default: '2026-08-01')")
     args, unknown = parser.parse_known_args()
     
     pipeline_mode = args.mode.lower()
     os.environ["PIPELINE_MODE"] = pipeline_mode
+    os.environ["START_DATE"] = args.since
 
-    mode_label = "【主題專題模式】(20 篇主題精選)"
+    mode_label = f"【主題專題模式】(過濾 {args.since} 起之最新新聞)"
     print(f"🌟 Starting AI Newsletter Publishing Pipeline - {mode_label}...")
     print("ℹ️  Note: Stage 1 (Incremental News Listener) runs incrementally via scheduler or 'python stage1_news_fetcher.py'.")
     
-    extra_args = ["--mode", pipeline_mode]
+    extra_args = ["--mode", pipeline_mode, "--since", args.since]
 
     # Step 1: Stage 2 - Active Theme Curation & Scoring
     if not run_stage("stage2_curator.py", f"Stage 2 - News Curation ({pipeline_mode})", extra_args):

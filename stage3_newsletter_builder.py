@@ -827,9 +827,9 @@ def enforce_rate_limit_delay(min_interval: float = 4.0):
 
 def call_llm_api(prompt: str, timeout: int = 25) -> str:
     """
-    Unified LLM API Invoker calling Gemini API with 4-second rate-limiting buffer.
+    Unified LLM API Invoker calling Gemini API with rate-limiting buffer.
     """
-    enforce_rate_limit_delay(4.0)
+    enforce_rate_limit_delay(0.8)
 
     gemini_key = os.environ.get("GEMINI_API_KEY")
     if not gemini_key:
