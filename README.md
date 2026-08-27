@@ -24,19 +24,14 @@
    - 專為企業級運維設計，支援原生 PostgreSQL 與 `pgvector` 擴充套件，具備 1536 維向量 Embeddings 語意檢索能力。
    - 完全相容 Docker Compose 本地部署及 Supabase / AWS RDS / Neon 等雲端託管資料庫。
 
-4. **24 小時背景自動維運服務 (Scheduler Service)**
-   - 每日 17:00 自動執行 Stage 1 增量新聞採集。
-   - 每週五 09:00 自動觸發 Master Pipeline 完成主題策展、電子報建置與 Issue 歷史封存。
-
 ---
 
 ## 🏗️ 系統架構與流水線流程 (System Architecture)
 
 ```mermaid
 flowchart TD
-    subgraph Master [主控與排程層 Master Orchestration]
+    subgraph Master [主控層 Master Orchestration]
         PIPE[master_run_pipeline.py - 一鍵流水線執行器]
-        SCHED[master_scheduler_service.py - 背景定時服務]
     end
 
     subgraph Config [編輯主題設定]
@@ -73,9 +68,6 @@ flowchart TD
     PIPE -.->|順序 1| STAGE2
     PIPE -.->|順序 2| STAGE3
     PIPE -.->|順序 3| S3_ARC
-
-    SCHED -.->|每日 17:00| STAGE1
-    SCHED -.->|每週五 09:00| PIPE
 ```
 
 ---
@@ -171,14 +163,6 @@ python run_stage2.py
 python run_stage3.py
 ```
 
-### 3. 啟動 24 小時背景自動維運服務 (Scheduler)
-```bash
-python master_scheduler_service.py
-```
-> **排程觸發規則**：
-> - **每日 17:00**：自動觸發 Stage 1 增量新聞抓取。
-> - **每週五 09:00**：自動觸發 Master Pipeline 全流程生成與備份。
-
 ---
 
 ## 📂 專案目錄結構 (Project Directory Layout)
@@ -186,7 +170,6 @@ python master_scheduler_service.py
 ```text
 ai_trend_listening/
 ├── 📄 master_run_pipeline.py        # 🚀 一鍵流水線連貫執行器 (Master Orchestrator)
-├── 📄 master_scheduler_service.py   # ⏰ 24 小時背景定時維運服務 (Scheduler)
 ├── 📄 init_db_and_migrate.py        # 🗄️ 資料庫 Schema 初始化與資料遷移工具
 ├── 📄 db_manager.py                 # 🔌 PostgreSQL + pgvector 資料庫管理模組
 │
