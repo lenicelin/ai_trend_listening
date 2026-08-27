@@ -45,14 +45,14 @@ def run_stage(script_name, description, extra_args=None):
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Master AI Newsletter Pipeline")
-    parser.add_argument("--mode", choices=["theme", "express"], default=os.environ.get("PIPELINE_MODE", "theme"),
-                        help="Pipeline mode: 'theme' (專題電子報, 20 篇) or 'express' (每週趨勢快報, 6 篇)")
+    parser.add_argument("--mode", choices=["theme"], default="theme",
+                        help="Pipeline mode: 'theme' (主題專題模式, 20 篇)")
     args, unknown = parser.parse_known_args()
     
     pipeline_mode = args.mode.lower()
     os.environ["PIPELINE_MODE"] = pipeline_mode
 
-    mode_label = "【每週趨勢快報模式】(6 篇精選速報)" if pipeline_mode == "express" else "【主題專題模式】(20 篇主題精選)"
+    mode_label = "【主題專題模式】(20 篇主題精選)"
     print(f"🌟 Starting AI Newsletter Publishing Pipeline - {mode_label}...")
     print("ℹ️  Note: Stage 1 (Incremental News Listener) runs incrementally via scheduler or 'python stage1_news_fetcher.py'.")
     

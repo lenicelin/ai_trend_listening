@@ -487,8 +487,8 @@ def prepare_curated_export_dto(selected_articles, qualified_threshold=80):
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Stage 2 Curator Engine")
-    parser.add_argument("--mode", choices=["theme", "express", "dynamic"], default=os.environ.get("PIPELINE_MODE", "theme"),
-                        help="Curation mode: 'theme' (特定預設主題 20 篇), 'express' (快報 6 篇), or 'dynamic' (全網無預設主題探索)")
+    parser.add_argument("--mode", choices=["theme", "dynamic"], default=os.environ.get("PIPELINE_MODE", "theme"),
+                        help="Curation mode: 'theme' (特定預設主題 20 篇) or 'dynamic' (全網無預設主題探索)")
     args, unknown = parser.parse_known_args()
     pipeline_mode = args.mode.lower()
 
@@ -527,12 +527,6 @@ def main():
         goal_desc = "【無預設主題模式】自動分析當週全網熱度最高的前 4 大真實趨勢與重磅事件。"
         print(f"🌐 [Stage 2 Curator Engine - Dynamic Discovery Mode] Automatically clustered weekly top trends!")
         print(f"   期數: {issue_tag}\n   動態推導主題: {newsletter_theme}\n   重點領域: {focus_domains}")
-    elif pipeline_mode == "express":
-        newsletter_theme = synthesize_weekly_express_theme(articles)
-        issue_tag = "Vol. 2026 快報"
-        focus_domains = "AI Agent、數據治理、算力布局、資安防衛"
-        goal_desc = "每週最新科技與 AI 趨勢快報，精選 6 篇當週最具影響力新聞。"
-        print(f"🚀 [Stage 2 Curator Engine - Express Mode] Synthesized Weekly Express Theme: [{issue_tag}] {newsletter_theme}")
     else:
         newsletter_theme, issue_tag, focus_domains, goal_desc = theme_from_excel, issue_tag_excel, focus_domains_excel, goal_desc_excel
         print(f"🎯 [Stage 2 Curator Engine - Preset Theme Mode] Evaluating Stage 1 database for Active Theme: [{issue_tag}] {newsletter_theme}...")
@@ -545,10 +539,6 @@ def main():
         total_score, matched_tags = evaluate_article(
             art, newsletter_theme, focus_domains, target_domains, domain_keyword_map, goal_desc
         )
-        if pipeline_mode == "express":
-            # In express mode, boost score based on authority and date recency
-            date_score = 20 if ("2026" in str(art.get("pub_date", "")) or "2025" in str(art.get("pub_date", ""))) else 10
-            total_score = max(total_score, 70) + date_score
             
         if total_score >= 35:
             curated_candidates.append({
@@ -563,7 +553,7 @@ def main():
 
     # Sort Tier 1 candidates by score descending
     curated_candidates.sort(key=lambda x: (x["score"], x["pub_date"]), reverse=True)
-    candidate_limit = 12 if pipeline_mode == "express" else 25
+    candidate_limit = 25
     tier1_top_candidates = curated_candidates[:candidate_limit]
     print(f"🎯 [Tier 1 Candidate Filter] Filtered down to top {len(tier1_top_candidates)} candidates for Tier 2 LLM curation.")
 

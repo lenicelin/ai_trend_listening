@@ -1193,8 +1193,8 @@ def update_newsletter_html(issue_tag, theme_title, focus_domains, cases):
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Stage 3 Newsletter Builder")
-    parser.add_argument("--mode", choices=["theme", "express"], default=os.environ.get("PIPELINE_MODE", "theme"),
-                        help="Builder mode: 'theme' (專題 20 篇) or 'express' (快報 6 篇)")
+    parser.add_argument("--mode", choices=["theme"], default="theme",
+                        help="Builder mode: 'theme' (主題專題模式)")
     args, unknown = parser.parse_known_args()
     pipeline_mode = args.mode.lower()
 
@@ -1203,27 +1203,8 @@ def main():
         print("⚠️ Warning: No articles loaded from Stage 2. Cannot build dynamic cases.")
         return
 
-    # Check if first article or theme indicates express mode
-    if pipeline_mode == "express" or len(articles) <= 6:
-        issue_tag = "Vol. 2026 快報"
-        newsletter_theme = "每週 AI 趨勢快報：當週前瞻產業科技動態"
-        md_path = "data/stage2_curated_report.md"
-        if os.path.exists(md_path):
-            try:
-                with open(md_path, "r", encoding="utf-8") as f:
-                    for line in f:
-                        if "本週電子報主題" in line:
-                            match = re.search(r'`([^`]+)`', line)
-                            if match:
-                                newsletter_theme = match.group(1).strip()
-                                break
-            except Exception:
-                pass
-        focus_domains = "AI Agent、數據治理、算力布局、資安防禦"
-        print(f"🚀 [Stage 3 Deep Engine - Express Mode] Building 6-case newsletter for: [{issue_tag}] {newsletter_theme}...")
-    else:
-        issue_tag, newsletter_theme, focus_domains = get_active_theme_info()
-        print(f"🚀 [Stage 3 Deep Engine - Theme Mode] Building newsletter dynamically for active theme: [{issue_tag}] {newsletter_theme}...")
+    issue_tag, newsletter_theme, focus_domains = get_active_theme_info()
+    print(f"🚀 [Stage 3 Deep Engine - Theme Mode] Building newsletter dynamically for active theme: [{issue_tag}] {newsletter_theme}...")
         
     cases = generate_cases_from_articles(articles, newsletter_theme)
     
